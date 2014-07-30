@@ -1,0 +1,21 @@
+section.jobs h1 {
+  padding-left: 10px;
+  color: #c00;
+}
+
+ul.jobs { 
+  list-style: none;
+  padding: 0px;
+
+  li {
+    padding: 5px 10px;
+  }
+
+  li:hover {
+    background: #f0f0f0;
+  }
+
+  li + li {
+    border-top: 1px dashed #ccc;
+  }
+}

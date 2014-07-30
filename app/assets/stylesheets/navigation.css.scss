@@ -1,0 +1,23 @@
+body > header nav {
+  ul {
+    padding: 0px;
+  }
+
+  li {
+    padding: 5px 10px;
+    display: inline-block;
+  }
+
+  li.active {
+    background: #2767a4;
+  }
+
+  a {
+    color: white;
+  
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
