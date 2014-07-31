@@ -17,8 +17,10 @@
     <dd><%= @job.company_name %></dd>
     <dt>Local</dt>
     <dd><%= @job.location %></dd>
-    <dt>Site</dt>
-    <dd><%= link_to @job.site_url, @job.site_url %></dd>
+    <% if @job.site_url %>
+      <dt>Site</dt>
+      <dd><%= link_to @job.site_url, @job.site_url %></dd>
+    <% end %>
   </dl>
 </header>
 

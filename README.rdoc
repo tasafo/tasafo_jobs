@@ -8,15 +8,23 @@ Run Mailcatcher when you need to test emails
 
 $ mailcatcher
 
-Open http://127.0.0.1:1080
+Open http://127.0.0.1:1080 in your browser
 
-2. Database
+2. Prepare database
 
 $ rake db:create
 $ rake db:migrate
 $ rake db:test:prepare
 
-3. Run SEED on development and production
+3. Run tests
+
+$ rspec .
+
+4. Run SEED on development and production
 
 $ rake db:seed
 $ heroku run rake db:seed
+
+5. Run server
+
+$ rails s
