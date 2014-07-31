@@ -13,9 +13,12 @@ business_category = JobCategory.find_or_create_by(name: I18n.t("categories.busin
 other_it_category = JobCategory.find_or_create_by(name: I18n.t("categories.other_it"))
 
 if Rails.env.development?
-  david = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "david@email.com")
-  maria = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "maria@mail.com")
-  john  = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "john@mail.com")
+  david  = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "david@mail.com")
+  maria  = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "maria@mail.com")
+  john   = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "john@mail.com")
+  mark   = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "mark@mail.com")
+  terry  = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "terry@mail.com")
+  amanda = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "amanda@mail.com")
 
   Job.create!(
     title: "Ruby Developer",
@@ -119,5 +122,68 @@ if Rails.env.development?
     site_url: "http://google.com",
     user: david,
     category: business_category
+    )
+
+  Resume.create!(
+    name: "Mark Spenser",
+    title: "Ruby Developer",
+    description:  "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
+                  Te eum habeo eirmod. Et nec habemus pertinax interpretaris, per ut melius perpetua omittantur. Quo tibique indoctum no, meis ferri soluta vis in. Ea vis elit mutat, ex duis veniam eum. Has hinc illum prompta et, ne has utamur atomorum.\n\n
+                  Eripuit constituam suscipiantur quo in. In his delectus quaerendum disputationi. Pri enim labitur platonem an, nam ad quodsi omittam suscipit, animal malorum oportere vim ut. Cum no velit ignota dolorum, erat evertitur ius an. Libris iuvaret sententiae ut cum, ea graece animal mediocritatem vis. Vix denique recusabo in, ut mel discere aliquid.",
+    location: "San Francisco, CA, USA",
+    site_url: "http://mark.com",
+    user: mark,
+    category: programming_category,
+    facebook_url: "http://facebook.com",
+    twitter_url: "http://twitter.com",
+    linked_in_url: "http://linkedin.com",
+    facebook_url: "http://facebook.com",
+    google_plus_url: "http://plus.google.com",
+    phone: "+1 555 888 4444",
+    contact_email: "mark@mail.com",
+    available: true,
+    listed: true
+    )
+
+  Resume.create!(
+    name: "Terry Shift",
+    title: "Web Designer",
+    description:  "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
+                  Te eum habeo eirmod. Et nec habemus pertinax interpretaris, per ut melius perpetua omittantur. Quo tibique indoctum no, meis ferri soluta vis in. Ea vis elit mutat, ex duis veniam eum. Has hinc illum prompta et, ne has utamur atomorum.\n\n
+                  Eripuit constituam suscipiantur quo in. In his delectus quaerendum disputationi. Pri enim labitur platonem an, nam ad quodsi omittam suscipit, animal malorum oportere vim ut. Cum no velit ignota dolorum, erat evertitur ius an. Libris iuvaret sententiae ut cum, ea graece animal mediocritatem vis. Vix denique recusabo in, ut mel discere aliquid.",
+    location: "San Francisco, CA, USA",
+    site_url: "http://terry.com",
+    user: terry,
+    category: designer_category,
+    facebook_url: "http://facebook.com",
+    twitter_url: "http://twitter.com",
+    linked_in_url: "http://linkedin.com",
+    facebook_url: "http://facebook.com",
+    google_plus_url: "http://plus.google.com",
+    phone: "+1 555 888 4444",
+    contact_email: "terry@mail.com",
+    available: false,
+    listed: false
+    )
+
+  Resume.create!(
+    name: "Amanda Watson",
+    title: "Sys Admin",
+    description:  "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
+                  Te eum habeo eirmod. Et nec habemus pertinax interpretaris, per ut melius perpetua omittantur. Quo tibique indoctum no, meis ferri soluta vis in. Ea vis elit mutat, ex duis veniam eum. Has hinc illum prompta et, ne has utamur atomorum.\n\n
+                  Eripuit constituam suscipiantur quo in. In his delectus quaerendum disputationi. Pri enim labitur platonem an, nam ad quodsi omittam suscipit, animal malorum oportere vim ut. Cum no velit ignota dolorum, erat evertitur ius an. Libris iuvaret sententiae ut cum, ea graece animal mediocritatem vis. Vix denique recusabo in, ut mel discere aliquid.",
+    location: "San Francisco, CA, USA",
+    site_url: "http://terry.com",
+    user: amanda,
+    category: system_admin_category,
+    facebook_url: "http://facebook.com",
+    twitter_url: "http://twitter.com",
+    linked_in_url: "http://linkedin.com",
+    facebook_url: "http://facebook.com",
+    google_plus_url: "http://plus.google.com",
+    phone: "+1 555 888 4444",
+    contact_email: "amanda@mail.com",
+    available: true,
+    listed: true
     )
 end

@@ -1,0 +1,114 @@
+<nav>
+  <% if @resume.persisted? %>
+    <%= link_to t("resumes.back_to_my_resume"), resume_path(@resume) %>
+  <% else %>
+    <%= link_to t("account.back_to_my_account"), my_account_path %>
+  <% end %>
+</nav>
+
+<h1><%= t("resumes.edit_title") %></h1>
+
+<%= form_for @resume, method: :put, url: resumes_path do |f| %>
+  <% if @resume.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+      <ul>
+      <% @resume.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <legend><%= t(:general_info) %></legend>
+
+      <div class="form-group">
+        <%= f.label :category_id %>
+        <%= f.select :category_id, categories_for_select(@resume), {}, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.label :location %>
+        <%= f.text_field :location, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.check_box :available %>
+        <%= f.label :available, t("resumes.available_placeholder") %>
+      </div>
+
+      <div class="form-group">
+        <%= f.check_box :listed %> 
+        <%= f.label :listed, t("resumes.listed_placeholder") %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <legend><%= t(:contact) %></legend>
+      
+      <div class="form-group">
+        <%= f.label :site_url %>
+        <%= f.text_field :site_url, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :contact_email %>
+        <%= f.text_field :contact_email, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :facebook_url %>
+        <%= f.text_field :facebook_url, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :twitter_url %>
+        <%= f.text_field :twitter_url, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :google_plus_url %>
+        <%= f.text_field :google_plus_url, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :linked_in_url %>
+        <%= f.text_field :linked_in_url, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :phone %>
+        <%= f.text_field :phone, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <legend><%= t("description") %></legend>
+  <div class="form-group">
+    <%= f.text_area :description, class: "form-control", rows: 15 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t("resumes.save"), class: "btn btn-primary" %>
+
+    <% if @resume.persisted? %>
+      or
+      <%= link_to t(:cancel), resume_path(@resume) %>
+    <% end %>
+  </div>
+<% end %>
+

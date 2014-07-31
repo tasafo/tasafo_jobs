@@ -1,0 +1,34 @@
+header.resume {
+  h1 small {
+    font-family: 'Open Sans', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 48px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  aside {
+    text-align: right;
+  }
+}
+
+ul.resume-social-media {
+  list-style: none;
+  padding: 0px;
+
+  li {
+    display: inline-block;
+  }
+  
+  li + li { 
+    margin-left: 15px;
+  }
+}
+
+ul.resume-info {
+  margin-top: 30px;
+  list-style: none;
+  padding: 0px;
+}

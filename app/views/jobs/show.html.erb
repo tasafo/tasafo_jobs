@@ -13,12 +13,12 @@
   <% end %>
 
   <dl>
-    <dt>Empressa</dt>
+    <dt><%= t(:company) %></dt>
     <dd><%= @job.company_name %></dd>
-    <dt>Local</dt>
+    <dt><%= t(:location) %></dt>
     <dd><%= @job.location %></dd>
     <% if @job.site_url %>
-      <dt>Site</dt>
+      <dt><%= t(:site) %></dt>
       <dd><%= link_to @job.site_url, @job.site_url %></dd>
     <% end %>
   </dl>

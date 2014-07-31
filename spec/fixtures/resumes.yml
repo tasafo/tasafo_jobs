@@ -1,0 +1,17 @@
+david:
+  user: david
+  category: programming_category
+  name: "David Doe"
+  title: "Ruby Developer"
+  description: "Lead Developer"
+  available: true
+  listed: true
+
+maria:
+  user: maria
+  category: designer_category
+  name: "Mary Jane"
+  title: "Web Developer"
+  description: "I love design!" 
+  available: false
+  listed: false

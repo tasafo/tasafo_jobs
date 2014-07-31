@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731030858) do
+ActiveRecord::Schema.define(version: 20140731183515) do
 
   create_table "job_categories", force: true do |t|
     t.string   "name"
@@ -33,6 +33,29 @@ ActiveRecord::Schema.define(version: 20140731030858) do
   end
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
+
+  create_table "resumes", force: true do |t|
+    t.integer  "user_id",                         null: false
+    t.integer  "category_id",                     null: false
+    t.string   "name",                            null: false
+    t.string   "title",                           null: false
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "google_plus_url"
+    t.string   "linked_in_url"
+    t.string   "phone"
+    t.string   "site_url"
+    t.string   "contact_email"
+    t.string   "location"
+    t.boolean  "available",       default: false
+    t.boolean  "listed",          default: false
+    t.text     "description",                     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "resumes", ["category_id"], name: "index_resumes_on_category_id", using: :btree
+  add_index "resumes", ["user_id"], name: "index_resumes_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

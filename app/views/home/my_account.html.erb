@@ -1,0 +1,13 @@
+<h1><%= t(:my_account) %></h1>
+
+<%= t(:email) %>:
+<%= current_user.email %>
+
+<nav class="actions">
+  <%= link_to t("devise.edit_account"), edit_user_registration_path, class: "btn btn-primary" %>
+</nav>
+
+<nav class="my-account-info">
+  <%= link_to t("resumes.my_resume"), my_resume_path, class: "btn btn-primary" %>
+  <%= link_to t("jobs.my_jobs"), my_jobs_path, class: "btn btn-primary" %>
+</nav>

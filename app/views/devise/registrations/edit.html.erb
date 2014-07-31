@@ -1,3 +1,7 @@
+<nav>
+  <%= link_to t("account.back_to_my_account"), my_account_path %>
+</nav>
+
 <h2><%= t("account.edit.title") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

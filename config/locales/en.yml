@@ -4,12 +4,33 @@ en:
   cancel: "Cancel"
   or: "Or"
   in: "in"
+  company: "Company"
+  location: "Location"
+  site: "Site"
+  description: "Description"
+  warning: "Warning"
+  http_reminder: "(Do not forget the http://)"
 
   devise: 
     sign_in: "Sign In"
     sign_up: "Sign Up"
     sign_out: "Sign Out"
     edit_account: "Edit My Account"
+
+  resumes:
+    edit_title: "Publish Resume"
+    save: "Save resume"
+    all_title: "All Resumes"
+    index_link: "All Resumes"
+    be_the_first: "No resumes found... be the first to advertize a resume!"
+    back_to_all_resumes: "← Back to all resumes"
+    back_to_my_resume: "← Back to my resume"
+    available: "Available"
+    unavailable: "Unavailable"
+    available_placeholder: "I'm available to be hired"
+    listed_placeholder: "List my resume so others can find me"
+    not_listed_alert: "Your resume is not listed. Edit your resume so others can find you!"
+    not_listed_error: "Sorry, this resume is not listed"
 
   jobs:
     edit: "Edit Job"
@@ -20,7 +41,7 @@ en:
     apply_message: "Apply for this job here:"
     advertize: "Advertize a Job"
     my_jobs_title: "My Job Ads"
-    you_have_no_jobs: "You have no jobs"
+    you_have_no_jobs: "You have no job ads"
     contact_message_placeholder: "How should they apply to this job?"
     location_placeholder: "ex: New York, NY"
     description_placeholder: "Add full description of the job like requisites and expectations"
@@ -50,6 +71,7 @@ en:
       confirm_new_password: "Confirm New Password"
 
   account:
+    back_to_my_account: "← Back to my account"
     edit:
       title: "Edit My Account"
       submit: "Update Account"

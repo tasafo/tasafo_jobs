@@ -3,21 +3,19 @@
     <li class="<%= tab_active?(:home, :index) %>">
       <%= link_to t("jobs.home"), root_path %>
     </li>
-    
-    <% if current_user %>
-      <li class="<%= tab_active?(:jobs, :my_jobs) %>">
-        <%= link_to t("jobs.my_jobs"), my_jobs_path %>
-      </li>
-    <% end %>
+    <li class="<%= tab_active?(:resumes, :index) %>">
+      <%= link_to t("resumes.index_link"), resumes_path %>
+    </li>
   </ul>
 </nav>
 
 <nav id="session_nav">
   <ul>
     <% if current_user %>
-      <li class="<%= tab_active?(:registrations, :edit) %>">
-        <%= link_to t("devise.edit_account"), edit_user_registration_path %>
+      <li class="<%= tab_active?(:home, :my_account) %>">
+        <%= link_to t("my_account"), my_account_path %>
       </li>
+
       <li>
         <%= link_to t("sign_out"), destroy_user_session_path, method: :delete %>
       </li>
@@ -25,6 +23,7 @@
       <li class="<%= tab_active?(:sessions, :new) %>">
         <%= link_to t("sign_in"), new_user_session_path %>
       </li>
+
       <li class="<%= tab_active?(:registrations, :new) %>">
         <%= link_to t("sign_up"), new_user_registration_path %>
       </li>

@@ -1,19 +1,31 @@
 <div class="row">
   <div class="col-md-8">
-    <%= form_for @job, class: "form-horizontal" do |f| %>
+    <%= form_for @job do |f| %>
+      <% if @job.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+          <ul>
+          <% @job.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
       <div class="form-group">
         <%= f.label :company_name %>
         <%= f.text_field :company_name, class: "form-control", autofocus: true %>
       </div>
 
       <div class="form-group">
-        <%= f.label :site_url %>
+        <%= f.label :site_url %> <i><%= t("http_reminder") %></i>
         <%= f.text_field :site_url, class: "form-control", placeholder: t("jobs.site_url_placeholder"), autofocus: true %>
       </div>
 
       <div class="form-group">
         <%= f.label :category_id, "Category" %>
-        <%= f.select :category_id, jobs_for_select, {}, class: "form-control" %>
+        <%= f.select :category_id, categories_for_select(@job), {}, class: "form-control" %>
       </div>
 
       <div class="form-group">

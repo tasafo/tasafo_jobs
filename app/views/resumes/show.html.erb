@@ -1,0 +1,77 @@
+<% if !@resume.listed? %>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <strong><%= t("warning") %>:</strong> <%= t("resumes.not_listed_alert") %>
+  </div>
+<% end %>
+
+<nav>
+  <% if current_user && @resume == current_user.resume %>
+    <%= link_to t("account.back_to_my_account"), my_account_path %>
+  <% else %>
+    <%= link_to t("resumes.back_to_all_resumes"), resumes_path %>
+  <% end %>
+</nav>
+
+<header class="resume">
+  <div class="row">
+    <div class="col-md-9">
+      <h1>
+        <%= @resume.name %>
+        <small><%= @resume.title %></small>
+      </h1>
+    </div>
+    <aside class="col-md-3">
+      <% if @resume.available? %>
+        <h2><span class="label label-success"><%= t("resumes.available") %></span></h2>
+      <% else %>
+        <h2><span class="label label-default"><%= t("resumes.unavailable") %></span></h2>
+      <% end %>
+    </aside>
+  </div>
+  
+  <% if @resume.user == current_user %>
+    <nav class="actions">
+      <%= link_to t("edit"), edit_resume_path, class: "btn btn-primary" %>
+    </nav>
+  <% end %>
+</header>
+
+<div class="row">
+  <div class="col-md-4">
+    <ul class="resume-social-media">
+      <% if @resume.facebook_url.present? %>
+        <li><%= link_to image_tag("facebook.png"), @resume.facebook_url %></li>
+      <% end %>
+      <% if @resume.twitter_url.present? %>
+        <li><%= link_to image_tag("twitter.png"), @resume.twitter_url %></li>
+      <% end %>
+      <% if @resume.linked_in_url.present? %>
+        <li><%= link_to image_tag("linked_in.png"), @resume.linked_in_url %></li>
+      <% end %>
+      <% if @resume.google_plus_url.present? %>
+        <li><%= link_to image_tag("google_plus.png"), @resume.google_plus_url %></li>
+      <% end %>
+    </ul>
+
+    <ul class="resume-info">
+      <% if @resume.location.present? %>
+        <li><%= t(:location) %>: <%= @resume.location %></li>
+      <% end %>
+      <% if @resume.site_url.present? %>
+        <li><%= t(:site) %>: <%= link_to @resume.site_url, @resume.site_url %></li>
+      <% end %>
+      <% if @resume.phone.present? %>
+        <li><%= t(:phone) %>: <%= @resume.phone %></li>
+      <% end %>
+      <% if @resume.contact_email.present? %>
+        <li><%= t(:email) %>: <%= link_to @resume.contact_email, "mailto:#{@resume.contact_email}" %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-8">
+    <section class="resume-description">
+      <%= @resume.description.html_safe %>
+    </section>
+  </div>
+</div>
