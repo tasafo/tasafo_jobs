@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for @job, class: "form-horizontal" do |f| %>
+      <div class="form-group">
+        <%= f.label :company_name %>
+        <%= f.text_field :company_name, class: "form-control", autofocus: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :site_url %>
+        <%= f.text_field :site_url, class: "form-control", placeholder: t("jobs.site_url_placeholder"), autofocus: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :category_id, "Category" %>
+        <%= f.select :category_id, jobs_for_select, {}, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control", placeholder: t("jobs.title_placeholder"), autofocus: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :location %>
+        <%= f.text_field :location, class: "form-control", placeholder: t("jobs.location_placeholder") %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control", rows: 15, placeholder: t("jobs.description_placeholder") %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :contact_message %>
+        <%= f.text_area :contact_message, class: "form-control", rows: 5, placeholder: t("jobs.contact_message_placeholder") %>
+      </div>
+
+      <button type="submit" class="btn btn-default"><%= t(submit_message) %></button>
+      <%= t(:or) %> <%= link_to t(:cancel), cancel_url %>
+    <% end %>
+  </div>
+</div>

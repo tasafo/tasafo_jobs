@@ -19,17 +19,14 @@
   
   <div class="row">
     <div class="col-lg-12">
-      <nav>
-        <ul>
-          <li class="<%= tab_active?(:home) %>"><%= link_to t("jobs.home"), root_path %></li>
-        </ul>
-      </nav>
+      <%= render "shared/top_navigation"%>
     </div>
   </div>
 </header>
 
 <div class="container">
   <div id="main">
+    <%= render "shared/alert_messages" %>
     <%= yield %>
   </div>
 </div>

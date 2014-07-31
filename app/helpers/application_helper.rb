@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def tab_active?(link)
-    "active" if link.to_s == controller_name.to_s && action_name == "index"
+  def tab_active?(_controller, _action)
+    "active" if _controller.to_s == controller_name && action_name == _action.to_s
   end
 end

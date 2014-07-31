@@ -1,5 +1,6 @@
 TasafoJobs::Application.routes.draw do
-  get 'jobs/show'
+  devise_for :users
+  resources :jobs
 
   root 'home#index'
 

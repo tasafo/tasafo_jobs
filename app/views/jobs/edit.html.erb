@@ -1,0 +1,7 @@
+<nav>
+  <%= link_to t("jobs.back_to_job"), @job %>
+</nav>
+
+<h1><%= t("jobs.edit") %></h1>
+
+<%= render "form", job: @job, submit_message: :update, cancel_url: job_path(@job) %>

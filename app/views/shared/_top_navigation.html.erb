@@ -1,0 +1,10 @@
+<nav>
+  <ul>
+    <li class="<%= tab_active?(:home, :index) %>"><%= link_to t("jobs.home"), root_path %></li>
+    
+    <% if current_user %>
+      <li class="<%= tab_active?(:jobs, :new) %>"><%= link_to t("jobs.advertize"), new_job_path %>
+    <% end %>
+    </li>
+  </ul>
+</nav>

@@ -4,80 +4,19 @@
   </p>
 </aside>
 
-<section class="jobs">
-  <h1><%= t("jobs.programming_jobs") %></h1>
+<% JobCategory.all.each do |category| %>
+  <% if category.jobs.any? %>
+    <section class="jobs">
+      <h1><%= category.name %></h1>
 
-  <ul class="jobs">
-    <% 5.times do %>
-      <li class="job">
-        <h4><%= link_to "Desenvolvedor Ruby", "/jobs/show" %></h4>
-        <p>HUB 728 <span>em</span> Belém, PA</p>
-      </li>
-    <% end %>
-  </ul>
-</section>
-
-<section class="jobs">
-  <h1><%= t("jobs.designer_jobs") %></h1>
-
-  <ul class="jobs">
-    <% 5.times do %>
-      <li class="job">
-        <h4><%= link_to "Desenvolvedor Ruby", "/jobs/show" %></h4>
-        <p>HUB 728 <span>em</span> Belém, PA</p>
-      </li>
-    <% end %>
-  </ul>
-</section>
-
-<section class="jobs">
-  <h1><%= t("jobs.system_administration_jobs") %></h1>
-
-  <ul class="jobs">
-    <% 5.times do %>
-      <li class="job">
-        <h4><%= link_to "Desenvolvedor Ruby", "/jobs/show" %></h4>
-        <p>HUB 728 <span>em</span> Belém, PA</p>
-      </li>
-    <% end %>
-  </ul>
-</section>
-
-<section class="jobs">
-  <h1><%= t("jobs.designer_jobs") %></h1>
-
-  <ul class="jobs">
-    <% 5.times do %>
-      <li class="job">
-        <h4><%= link_to "Desenvolvedor Ruby", "/jobs/show" %></h4>
-        <p>HUB 728 <span>em</span> Belém, PA</p>
-      </li>
-    <% end %>
-  </ul>
-</section>
-
-<section class="jobs">
-  <h1><%= t("jobs.business_jobs") %></h1>
-
-  <ul class="jobs">
-    <% 5.times do %>
-      <li class="job">
-        <h4><%= link_to "Desenvolvedor Ruby", "/jobs/show" %></h4>
-        <p>HUB 728 <span>em</span> Belém, PA</p>
-      </li>
-    <% end %>
-  </ul>
-</section>
-
-<section class="jobs">
-  <h1><%= t("jobs.other_jobs") %></h1>
-
-  <ul class="jobs">
-    <% 5.times do %>
-      <li class="job">
-        <h4><%= link_to "Desenvolvedor Ruby", "/jobs/show" %></h4>
-        <p>HUB 728 <span>em</span> Belém, PA</p>
-      </li>
-    <% end %>
-  </ul>
-</section>
+      <ul class="jobs">
+        <% category.jobs.each do |job| %>
+          <li class="job">
+            <h4><%= link_to job.title, job %></h4>
+            <p><%= job.company_name %> <span>em</span> <%= job.location %></p>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+<% end %>
