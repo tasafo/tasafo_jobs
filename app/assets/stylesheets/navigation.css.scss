@@ -1,4 +1,10 @@
 body > header nav {
+  display: inline-block;
+
+  &#session_nav {
+    float: right;
+  }
+
   ul {
     padding: 0px;
   }
@@ -14,10 +20,10 @@ body > header nav {
 
   a {
     color: white;
+  }
   
-    &:hover {
-      color: white;
-      text-decoration: none;
-    }
+  a:hover {
+    color: white;
+    text-decoration: none;
   }
 }

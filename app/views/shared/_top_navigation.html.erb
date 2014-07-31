@@ -1,4 +1,4 @@
-<nav>
+<nav id="main_nav">
   <ul>
     <li class="<%= tab_active?(:home, :index) %>"><%= link_to t("jobs.home"), root_path %></li>
     
@@ -6,5 +6,17 @@
       <li class="<%= tab_active?(:jobs, :new) %>"><%= link_to t("jobs.advertize"), new_job_path %>
     <% end %>
     </li>
+  </ul>
+</nav>
+
+<nav id="session_nav">
+  <ul>
+    <% if current_user %>
+      <li><%= link_to t("sign_out"), destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li class="<%= tab_active?(:sessions, :new) %>"><%= link_to t("sign_in"), new_user_session_path %></li>
+      <li class="<%= tab_active?(:registrations, :new) %>"><%= link_to t("sign_up"), new_user_registration_path %></li>
+
+    <% end %>
   </ul>
 </nav>
