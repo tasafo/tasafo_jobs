@@ -4,7 +4,11 @@ Este é um projeto recente criado pela comunidade Tá Safo para listar vagas de 
 
 Para começar a contribuir:
 
-### Instale o Mailcatcher para testar emails no ambiente local
+#### Dê um fork no projeto
+
+#### Clone seu repositório fork localmente
+
+#### Instale o Mailcatcher para testar emails no ambiente local
 
 `$ gem install mailcatcher`
 
@@ -14,7 +18,7 @@ Rode o Mailcatcher quando precisar testar emails
 
 Abra o Mailcatcher http://127.0.0.1:1080 no navegador
 
-### Prepare o banco de dados
+#### Prepare o banco de dados
 
 `$ rake db:create`
 
@@ -22,30 +26,30 @@ Abra o Mailcatcher http://127.0.0.1:1080 no navegador
 
 `$ rake db:test:prepare`
 
-### Rode os testes
+#### Rode os testes
 
 `$ rspec .`
 
-### Rode o SEED em desenvolvimento e também em produção!
+#### Rode o SEED em desenvolvimento e também em produção!
 
 `$ rake db:seed`
 
 `$ heroku run rake db:seed`
 
-### Para rodar o servidor local
+#### Para rodar o servidor local
 
 `$ rails s`
 
-### Cadastre-se ou entre com os seguintes usuários criados pelo SEED em desenvolvimento
+#### Cadastre-se ou entre com os seguintes usuários criados pelo SEED em desenvolvimento
 
-david@email.com   / pass: 12345678
+david@mail.com   / pass: 12345678
 
-maria@email.com   / pass: 12345678
+maria@mail.com   / pass: 12345678
 
-john@email.com    / pass: 12345678
+john@mail.com    / pass: 12345678
 
-mark@email.com    / pass: 12345678
+mark@mail.com    / pass: 12345678
 
-terry@email.com   / pass: 12345678
+terry@mail.com   / pass: 12345678
 
-amanda@email.com  / pass: 12345678
+amanda@mail.com  / pass: 12345678
