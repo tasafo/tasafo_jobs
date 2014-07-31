@@ -13,11 +13,11 @@ business_category = JobCategory.find_or_create_by(name: I18n.t("categories.busin
 other_it_category = JobCategory.find_or_create_by(name: I18n.t("categories.other_it"))
 
 if Rails.env.development?
-  david = User.create(email: "david@email.com", password: "12345678", password_confirmation: "12345678")
-  maria = User.create(email: "maria@mail.com", password: "12345678", password_confirmation: "12345678")
-  john = User.create(email: "john@mail.com", password: "12345678", password_confirmation: "12345678")
+  david = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "david@email.com")
+  maria = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "maria@mail.com")
+  john  = User.create_with(password: "12345678", password_confirmation: "12345678").find_or_create_by!(email: "john@mail.com")
 
-  Job.create(
+  Job.create!(
     title: "Ruby Developer",
     company_name: "37 Signals",
     description: "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
@@ -30,7 +30,7 @@ if Rails.env.development?
     category: programming_category
     )
 
-  Job.create(
+  Job.create!(
     title: "Lead Android Developer",
     company_name: "Google",
     description: "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
@@ -43,7 +43,7 @@ if Rails.env.development?
     category: programming_category
     )
 
-  Job.create(
+  Job.create!(
     title: "Senior System Manager",
     company_name: "Google",
     description: "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
@@ -56,7 +56,7 @@ if Rails.env.development?
     category: system_admin_category
     )
 
-  Job.create(
+  Job.create!(
     title: "Junior Designer",
     company_name: "Google",
     description: "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
@@ -69,7 +69,7 @@ if Rails.env.development?
     category: designer_category
     )
 
-  Job.create(
+  Job.create!(
     title: "Linux System Admin",
     company_name: "Tá Safo",
     description: "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
@@ -82,7 +82,7 @@ if Rails.env.development?
     category: system_admin_category
     )
 
-  Job.create(
+  Job.create!(
     title: "Computer Maintanence",
     company_name: "Tá Safo",
     description: "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
@@ -95,7 +95,7 @@ if Rails.env.development?
     category: other_it_category
     )
 
-  Job.create(
+  Job.create!(
     title: "Internet Marketing Professional",
     company_name: "Tá Safo",
     description: "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
@@ -108,7 +108,7 @@ if Rails.env.development?
     category: business_category
     )
 
-  Job.create(
+  Job.create!(
     title: "Application Reseller",
     company_name: "37 Signals",
     description: "Lorem ipsum dolor sit amet, at novum partiendo nam, et esse equidem eum, sonet option saperet est at. Numquam feugait vix et. Probo singulis scripserit ex nam. At suas sanctus erroribus qui, pri ex omnis fabulas propriae. Ne vis dico sonet accommodare, graece tritani pertinacia ut mea. Duo ei voluptua gloriatur.\n\n
