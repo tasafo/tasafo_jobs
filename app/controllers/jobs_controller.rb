@@ -1,6 +1,9 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit]
 
+  def my_jobs
+  end
+
   def show
     @job = Job.find(params[:id])
   end
@@ -36,7 +39,7 @@ class JobsController < ApplicationController
   def destroy
     @job = current_user.jobs.find(params[:id])
 
-    if false
+    if @job.destroy
       redirect_to root_path, notice: t("jobs.successfully_destroyed")
     else
       redirect_to @job, alert: t("jobs.destroy_error")

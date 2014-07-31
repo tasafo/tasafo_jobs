@@ -1,7 +1,7 @@
 <nav>
-  <%= link_to t("jobs.back_to_all_jobs"), root_path %>
+  <%= link_to t("jobs.back_to_my_jobs"), my_jobs_path %>
 </nav>
 
 <h1><%= t("jobs.advertize") %></h1>
 
-<%= render "form", job: @job, submit_message: :advertize, cancel_url: root_path %>
+<%= render "form", job: @job, submit_message: :advertize, cancel_url: my_jobs_path %>

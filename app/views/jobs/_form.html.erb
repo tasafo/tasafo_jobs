@@ -36,7 +36,7 @@
         <%= f.text_area :contact_message, class: "form-control", rows: 5, placeholder: t("jobs.contact_message_placeholder") %>
       </div>
 
-      <button type="submit" class="btn btn-default"><%= t(submit_message) %></button>
+      <button type="submit" class="btn btn-primary"><%= t(submit_message) %></button>
       <%= t(:or) %> <%= link_to t(:cancel), cancel_url %>
     <% end %>
   </div>

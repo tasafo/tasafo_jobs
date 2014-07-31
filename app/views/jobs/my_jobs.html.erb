@@ -1,0 +1,26 @@
+<h1><%= t("jobs.my_jobs_title") %></h1>
+
+<nav class="actions">
+  <%= link_to t("jobs.advertize"), new_job_path, class: "btn btn-primary" %>
+</nav>
+
+<% if current_user.jobs.any? %>
+  <% JobCategory.all.each do |category| %>
+    <% if category.jobs.owned_by(current_user).any? %>
+      <section class="jobs">
+        <h1><%= category.name %></h1>
+
+        <ul class="jobs">
+          <% category.jobs.owned_by(current_user).each do |job| %>
+            <li class="job">
+              <h4><%= link_to job.title, job %></h4>
+              <p><%= job.company_name %> <span>em</span> <%= job.location %></p>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+    <% end %>
+  <% end %>
+<% else %>
+  <p><%= t("jobs.you_have_no_jobs") %></p>
+<% end %>

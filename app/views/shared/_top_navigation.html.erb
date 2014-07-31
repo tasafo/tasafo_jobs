@@ -5,8 +5,8 @@
     </li>
     
     <% if current_user %>
-      <li class="<%= tab_active?(:jobs, :new) %>">
-        <%= link_to t("jobs.advertize"), new_job_path %>
+      <li class="<%= tab_active?(:jobs, :my_jobs) %>">
+        <%= link_to t("jobs.my_jobs"), my_jobs_path %>
       </li>
     <% end %>
   </ul>
