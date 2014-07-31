@@ -6,24 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-if JobCategory.all.empty?
-  JobCategory.create(name: I18n.t("categories.programming"))
-  JobCategory.create(name: I18n.t("categories.system_admin"))
-  JobCategory.create(name: I18n.t("categories.designer"))
-  JobCategory.create(name: I18n.t("categories.business"))
-  JobCategory.create(name: I18n.t("categories.other_it"))
-end
-
-programming_category = JobCategory.find_by(name: I18n.t("categories.programming"))
-system_admin_category = JobCategory.find_by(name: I18n.t("categories.system_admin"))
-designer_category = JobCategory.find_by(name: I18n.t("categories.designer"))
-business_category = JobCategory.find_by(name: I18n.t("categories.business"))
-other_it_category = JobCategory.find_by(name: I18n.t("categories.other_it"))
+programming_category = JobCategory.find_or_create_by(name: I18n.t("categories.programming"))
+system_admin_category = JobCategory.find_or_create_by(name: I18n.t("categories.system_admin"))
+designer_category = JobCategory.find_or_create_by(name: I18n.t("categories.designer"))
+business_category = JobCategory.find_or_create_by(name: I18n.t("categories.business"))
+other_it_category = JobCategory.find_or_create_by(name: I18n.t("categories.other_it"))
 
 if Rails.env.development?
-  david = User.create(email: "david@email.com", password: "123456", password_confirmation: "123456")
-  maria = User.create(email: "maria@mail.com", password: "123456", password_confirmation: "123456")
-  john = User.create(email: "john@mail.com", password: "123456", password_confirmation: "123456")
+  david = User.create(email: "david@email.com", password: "12345678", password_confirmation: "12345678")
+  maria = User.create(email: "maria@mail.com", password: "12345678", password_confirmation: "12345678")
+  john = User.create(email: "john@mail.com", password: "12345678", password_confirmation: "12345678")
 
   Job.create(
     title: "Ruby Developer",
