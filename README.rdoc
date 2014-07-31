@@ -1,5 +1,16 @@
 == README
 
-1. Run SEED on development and production
+1. Install Mailcatcher locally for development email management
 
-rake db:seed
+$ gem install mailcatcher
+
+Run Mailcatcher when you need to test emails
+
+$ mailcatcher
+
+Open http://127.0.0.1:1080
+
+2. Run SEED on development and production
+
+$ rake db:seed
+$ heroku run rake db:seed

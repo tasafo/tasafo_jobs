@@ -4,6 +4,12 @@ en:
   cancel: "Cancel"
   or: "Or"
 
+  devise: 
+    sign_in: "Sign In"
+    sign_up: "Sign Up"
+    sign_out: "Sign Out"
+    edit_account: "Edit My Account"
+
   jobs:
     edit: "Edit Job"
     back_to_job: "← Back to job"
@@ -34,3 +40,21 @@ en:
     designer: "Designer"
     business: "Business"
     other_it: "Other IT"
+
+  passwords:
+    new:
+      title: "Forgot your password?"
+      submit: "Send me reset password instructions"
+    edit:
+      title: "Reset Password"
+      new_password: "New Password"
+      confirm_new_password: "Confirm New Password"
+
+  account:
+    edit:
+      title: "Edit My Account"
+      submit: "Update Account"
+      password_placeholder: "(leave blank if you don't want to change it)"
+      confirm_current_password_placeholder: "(we need your current password to confirm your changes)"
+      cancel_my_account: "Cancel my account"
+      cancel_my_account_confirmation: "Are you sure you want to close your account?"
