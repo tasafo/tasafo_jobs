@@ -71,7 +71,6 @@ en:
       confirm_new_password: "Confirm New Password"
 
   account:
-    back_to_my_account: "← Back to my account"
     edit:
       title: "Edit My Account"
       submit: "Update Account"

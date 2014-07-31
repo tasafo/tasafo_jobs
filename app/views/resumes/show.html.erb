@@ -5,11 +5,7 @@
 <% end %>
 
 <nav>
-  <% if current_user && @resume == current_user.resume %>
-    <%= link_to t("account.back_to_my_account"), my_account_path %>
-  <% else %>
-    <%= link_to t("resumes.back_to_all_resumes"), resumes_path %>
-  <% end %>
+  <%= link_to t("resumes.back_to_all_resumes"), resumes_path %>
 </nav>
 
 <header class="resume">

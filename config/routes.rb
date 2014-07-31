@@ -10,6 +10,5 @@ TasafoJobs::Application.routes.draw do
   get "jobs/my_jobs" => "jobs#my_jobs", as: :my_jobs
   resources :jobs
 
-  get "my_account" => "home#my_account", as: :my_account
   root 'home#index'
 end

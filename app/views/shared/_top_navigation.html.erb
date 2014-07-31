@@ -12,8 +12,15 @@
 <nav id="session_nav">
   <ul>
     <% if current_user %>
-      <li class="<%= tab_active?(:home, :my_account) %>">
-        <%= link_to t("my_account"), my_account_path %>
+      <li class="<%= tab_active?(:jobs, :my_jobs) %>">
+        <%= link_to t("jobs.my_jobs"), my_jobs_path %>
+      </li>
+      <li class="<%= tab_active?(:resumes, :show, (@resume && @resume.user == current_user)) %>">
+        <%= link_to t("resumes.my_resume"), my_resume_path %>
+      </li>
+
+      <li class="<%= tab_active?(:registrations, :edit) %>">
+        <%= link_to t("my_account"), edit_user_registration_path %>
       </li>
 
       <li>
