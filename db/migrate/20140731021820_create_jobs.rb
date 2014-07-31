@@ -1,16 +1,16 @@
 class CreateJobs < ActiveRecord::Migration
   def change
     create_table :jobs do |t|
-      t.belongs_to :user, index: true
-      t.belongs_to :category
+      t.belongs_to :user, index: true, null: false
+      t.belongs_to :category, null: false
 
-      t.string :title
-      t.string :company_name
+      t.string :title, null: false
+      t.string :company_name, null: false
       t.string :site_url
       t.string :location
       
-      t.text :description
-      t.text :contact_message
+      t.text :description, null: false
+      t.text :contact_message, null: false
 
       t.timestamps
     end

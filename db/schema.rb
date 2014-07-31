@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(version: 20140731183515) do
   end
 
   create_table "jobs", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "category_id"
-    t.string   "title"
-    t.string   "company_name"
+    t.integer  "user_id",         null: false
+    t.integer  "category_id",     null: false
+    t.string   "title",           null: false
+    t.string   "company_name",    null: false
     t.string   "site_url"
     t.string   "location"
-    t.text     "description"
-    t.text     "contact_message"
+    t.text     "description",     null: false
+    t.text     "contact_message", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
