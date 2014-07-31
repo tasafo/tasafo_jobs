@@ -7,5 +7,5 @@ class Job < ActiveRecord::Base
   validates_presence_of :category, :user
   validates_presence_of :title, :company_name, :contact_message, :description
 
-  validates :site_url, format: { with: URI.regexp }, allow_nil: true
+  validates :site_url, format: { with: URI.regexp }, allow_blank: true
 end
