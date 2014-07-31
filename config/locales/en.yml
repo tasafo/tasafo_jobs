@@ -3,6 +3,7 @@ en:
   edit: "Edit"
   cancel: "Cancel"
   or: "Or"
+  in: "in"
 
   devise: 
     sign_in: "Sign In"
@@ -14,11 +15,6 @@ en:
     edit: "Edit Job"
     back_to_job: "← Back to job"
     home: "All Jobs"
-    programming_jobs: "Programming Jobs"
-    system_administration_jobs: "System Administration Jobs"
-    designer_jobs: "Designer Jobs"
-    business_jobs: "Management & Business Jobs"
-    other_jobs: "Other IT Jobs"
     back_to_all_jobs: "← Back to all jobs"
     back_to_my_jobs: "← Back to my jobs"
     apply_message: "Apply for this job here:"
@@ -39,7 +35,7 @@ en:
   categories:
     select_category: "Select a job category..."
     programming: "Programming"
-    system_manegement: "System Management"
+    system_admin: "System Admin"
     designer: "Designer"
     business: "Business"
     other_it: "Other IT"
