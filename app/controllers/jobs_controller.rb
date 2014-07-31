@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit]
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :my_jobs]
 
   def my_jobs
   end
