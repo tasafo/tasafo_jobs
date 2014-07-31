@@ -8,6 +8,12 @@
   <%= link_to t("resumes.back_to_all_resumes"), resumes_path %>
 </nav>
 
+<% if @resume.user == current_user %>
+  <nav class="actions">
+    <%= link_to t("edit"), edit_resume_path, class: "btn btn-primary" %>
+  </nav>
+<% end %>
+
 <header class="resume">
   <div class="row">
     <div class="col-md-9">
@@ -24,12 +30,6 @@
       <% end %>
     </aside>
   </div>
-  
-  <% if @resume.user == current_user %>
-    <nav class="actions">
-      <%= link_to t("edit"), edit_resume_path, class: "btn btn-primary" %>
-    </nav>
-  <% end %>
 </header>
 
 <div class="row">

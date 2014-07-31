@@ -53,6 +53,7 @@ en:
     destroy_error: "Sorry, your ad could not be deleted. Please contact our support."
     confirm_destroy: "Are you sure you want to delete this ad?"
     be_the_first: "No jobs found... be the first to advertize a job!"
+    you_have_no_jobs: "You did not advertize any jobs yet."
 
   categories:
     select_category: "Select a job category..."

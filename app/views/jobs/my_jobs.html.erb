@@ -26,5 +26,7 @@
     <% end %>
   <% end %>
 <% else %>
-  <p><%= t("jobs.you_have_no_jobs") %></p>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <%= t("jobs.you_have_no_jobs") %>
+  </div>
 <% end %>

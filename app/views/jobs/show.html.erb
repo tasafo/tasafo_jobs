@@ -1,16 +1,22 @@
 <nav>
-  <%= link_to t("jobs.back_to_all_jobs"), jobs_path %>
+  <% if @job.user == current_user %>
+    <%= link_to t("jobs.back_to_my_jobs"), my_jobs_path %>
+  <% else %>
+    <%= link_to t("jobs.back_to_all_jobs"), jobs_path %>
+  <% end %>
 </nav>
+
+<% if @job.user == current_user %>
+  <nav class="actions">
+    <%= link_to t("edit"), edit_job_path(@job), class: "btn btn-primary" %>
+    <%= link_to t("delete"), @job, method: :delete, data: { confirm: t("jobs.confirm_destroy") }, class: "btn btn-danger" %>
+  </nav>
+<% end %>
 
 <header>
   <h1><%= @job.title %></h1>
   
-  <% if @job.user == current_user %>
-    <nav class="actions">
-      <%= link_to t("edit"), edit_job_path(@job), class: "btn btn-primary" %>
-      <%= link_to t("delete"), @job, method: :delete, data: { confirm: t("jobs.confirm_destroy") }, class: "btn btn-danger" %>
-    </nav>
-  <% end %>
+
 
   <dl>
     <dt><%= t(:company) %></dt>

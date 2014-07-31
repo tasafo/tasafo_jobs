@@ -15,7 +15,7 @@
       <li class="<%= tab_active?(:jobs, :my_jobs) %>">
         <%= link_to t("jobs.my_jobs"), my_jobs_path %>
       </li>
-      <li class="<%= tab_active?(:resumes, :show, (@resume && @resume.user == current_user)) %>">
+      <li class="<%= tab_active?(:resumes, :show, (@resume && @resume.user == current_user)) %> <%= tab_active?(:resumes, :edit) %>">
         <%= link_to t("resumes.my_resume"), my_resume_path %>
       </li>
 
