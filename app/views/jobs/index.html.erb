@@ -20,3 +20,9 @@
     </section>
   <% end %>
 <% end %>
+
+<% if Job.count == 0 %>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <%= t("jobs.be_the_first") %>
+  </div>
+<% end %>

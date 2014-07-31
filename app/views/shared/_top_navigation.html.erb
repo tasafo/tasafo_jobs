@@ -1,7 +1,7 @@
 <nav id="main_nav">
   <ul>
-    <li class="<%= tab_active?(:home, :index) %>">
-      <%= link_to t("jobs.home"), root_path %>
+    <li class="<%= tab_active?(:jobs, :index) %>">
+      <%= link_to t("jobs.home"), jobs_path %>
     </li>
     <li class="<%= tab_active?(:resumes, :index) %>">
       <%= link_to t("resumes.index_link"), resumes_path %>

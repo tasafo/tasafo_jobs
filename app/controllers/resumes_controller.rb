@@ -2,7 +2,6 @@ class ResumesController < ApplicationController
   before_action :authenticate_user!, only: [:update, :edit]
 
   def index
-    @resumes = Resume.all
   end
 
   def my_resume

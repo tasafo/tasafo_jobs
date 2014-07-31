@@ -1,22 +1,24 @@
 <h1><%= t("resumes.all_title") %></h1>
 
-<% if Resume.count > 0 %>
-  <% JobCategory.all.each do |category| %>
-    <% if category.resumes.listed.any? %>
-      <section class="jobs">
-        <h1><%= category.name %></h1>
+<% JobCategory.all.each do |category| %>
+  <% if category.resumes.listed.any? %>
+    <section class="jobs">
+      <h1><%= category.name %></h1>
 
-        <ul class="jobs">
-          <% category.resumes.listed.each do |resume| %>
-            <li class="job">
-              <h4><%= link_to resume.title, resume %></h4>
-              <p><%= resume.name %> <span><%= t(:in) %></span> <%= resume.location %></p>
-            </li>
-          <% end %>
-        </ul>
-      </section>
-    <% end %>
+      <ul class="jobs">
+        <% category.resumes.listed.each do |resume| %>
+          <li class="job">
+            <h4><%= link_to resume.title, resume %></h4>
+            <p><%= resume.name %> <span><%= t(:in) %></span> <%= resume.location %></p>
+          </li>
+        <% end %>
+      </ul>
+    </section>
   <% end %>
-<% else %>
-  <p><%= t("resumes.be_the_first") %></p>
+<% end %>
+
+<% if Resume.listed.count == 0 %>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <%= t("resumes.be_the_first") %>
+  </div>
 <% end %>

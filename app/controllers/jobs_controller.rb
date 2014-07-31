@@ -1,6 +1,9 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :my_jobs]
 
+  def index
+  end
+
   def my_jobs
   end
 
