@@ -10,7 +10,13 @@ $ mailcatcher
 
 Open http://127.0.0.1:1080
 
-2. Run SEED on development and production
+2. Database
+
+$ rake db:create
+$ rake db:migrate
+$ rake db:test:prepare
+
+3. Run SEED on development and production
 
 $ rake db:seed
 $ heroku run rake db:seed

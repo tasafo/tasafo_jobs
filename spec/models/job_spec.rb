@@ -1,5 +1,18 @@
-require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe Job, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Job do
+  fixtures :users
+  fixtures :jobs
+
+  describe "scopes" do
+    describe "owned_by user" do
+      it "returns jobs owned by user" do
+        expect(Job.owned_by(users(:david))).to include jobs(:ruby)
+      end
+
+      it "does not return jobs that are not owned by user" do
+        expect(Job.owned_by(users(:david))).to_not include jobs(:designer)
+      end       
+    end
+  end
 end

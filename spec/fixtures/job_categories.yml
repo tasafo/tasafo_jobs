@@ -1,0 +1,14 @@
+programming_category:
+  name: <%= I18n.t("categories.programming") %>
+
+system_admin_category:
+  name: <%= I18n.t("categories.system_admin") %>
+
+designer_category:
+  name: <%= I18n.t("categories.designer") %>
+
+business_category:
+  name: <%= I18n.t("categories.business") %>
+
+other_it_category:
+  name: <%= I18n.t("categories.other_it") %>

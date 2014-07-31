@@ -1,0 +1,17 @@
+ruby:
+  user: david
+  category: programming_category
+  title: "Ruby Developer"
+  company_name: "37 SIgnals"
+  description: "Lorem Ipsum"
+  contact_message: "Lorem Ipsum"
+  location: "San Francisco, CA, USA"
+
+designer:
+  user: maria
+  category: design_category
+  title: "Web Designer"
+  company_name: "Google"
+  description: "Lorem Ipsum"
+  contact_message: "Lorem Ipsum"
+  location: "San Francisco, CA, USA"
