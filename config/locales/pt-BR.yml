@@ -1,0 +1,121 @@
+"pt-BR":
+  home: "Home"
+  edit: "Editar"
+  cancel: "Cancelar"
+  or: "Ou"
+  in: "Em"
+  company: "Empresa"
+  location: "Localização"
+  site: "Site"
+  description: "Descrição"
+  warning: "Alerta"
+  general_info: "Informações Gerais"
+  contact: "Contato"
+  http_reminder: "(Não esqueça do http://)"
+  advertize: Anuncie
+
+  devise:
+    sign_in: "Login"
+    sign_up: "Cadastre-se"
+    sign_out: "Sair"
+    edit_account: "Editar Perfil"
+
+  resumes:
+    my_resume: "Meu Perfil"
+    edit_title: "Perfil"
+    save: "Salvar Perfil"
+    all_title: "Profissionais"
+    index_link: "Profissionais"
+    be_the_first: "Nenhum Perfil encontrado... seja o primeiro a publicar um Perfil!"
+    back_to_all_resumes: "← Voltar para todos os Perfis"
+    back_to_my_resume: "← Voltar para o Perfis"
+    available: "Disponível"
+    unavailable: "Indisponível"
+    available_placeholder: "Estou disponível para ser contratado"
+    listed_placeholder: "Listar meu Perfil para outros me encontrarem"
+    not_listed_alert: "Seu Perfil não foi listado. Altere seu Perfil para que outros o encontrem!"
+    not_listed_error: "Desculpe, seu Perfil não foi listado"
+
+  jobs:
+    my_jobs: "Anúncios de Trampos"
+    edit: "Alterar Trampo"
+    back_to_job: "← Voltar para o Anúncio do Trampo"
+    home: "Trampos"
+    back_to_all_jobs: "← Voltar para os Trampos"
+    back_to_my_jobs: "← Voltar para os meus Anúncios"
+    apply_message: "Candidatar-se para esse Trampo:"
+    advertize: "Anunciar um Trampo"
+    my_jobs_title: "Meus Trampos Anunciados"
+    you_have_no_jobs: "Você não tem trampos anunciados"
+    contact_message_placeholder: "Como se candidatar para o Trampo?"
+    location_placeholder: "ex: Belém, PA"
+    description_placeholder: "Adicione uma descrição completa do trampo, como requisitos e expectativas"
+    title_placeholder: "ex: Programador Ruby"
+    site_url_placeholder: "ex: http://www.yoursite.com"
+    successfully_created: "Uhuuu! Você anunciou um novo Trampo!"
+    successfully_updated: "Seu trampo foi atualizado"
+    successfully_destroyed: "Você deletou um Trampo"
+    destroy_error: "Desculpe, seu Trampo não pode ser apagado. Por favor entre em contato conosco."
+    confirm_destroy: "Você tem certeza que deseja apagar esse Trampo?"
+    be_the_first: "Nenhum Trampo foi encontrado... seja o primeiro a anunciar um Trampo!"
+    you_have_no_jobs: "Você não anunciou nenhum Trampo ainda."
+
+  categories:
+    select_category: "Selecione a categoria do Trampo..."
+    programming: "Programação"
+    system_admin: "Administrador de Sistemas"
+    designer: "Designer"
+    business: "Analista de Negócio"
+    other_it: "Outra área de TI"
+
+  passwords:
+    new:
+      title: "Você esqueceu sua senha?"
+      submit: "Envie as instruções para recuperar a senha"
+    edit:
+      title: "Reiniciar a Senha"
+      new_password: "Nova Senha"
+      confirm_new_password: "Confirmar Nova Senha"
+
+  account:
+    my_account: "Minha Conta"
+    edit:
+      title: "Editar Conta"
+      submit: "Atualizar Conta"
+      password_placeholder: "(deixe em branco se não quiser alterá-la)"
+      confirm_current_password_placeholder: "(precisamos da sua senha atual para confirmar as modificações)"
+      cancel_my_account: "Cancelar Conta"
+      cancel_my_account_confirmation: "Você tem certeza que deseja apagar sua Conta?"
+
+  activerecord:
+    models:
+      resume: Perfil
+      user: Usuário
+      job: Trampo
+    attributes:
+      resume:
+        category_id: Categoria
+        name: Nome
+        title: Profissão
+        location: Localização
+        site_url: URL do Site
+        phone: Telefone
+        contact_email: Email de Contato
+        facebook_url: URL do Facebook
+        twitter_url: URL do Twitter
+        google_plus_url: URL do Google Plus
+        linked_in_url: URL do Linkedin
+
+      user:
+        password: Senha
+        password_confirmation: Confirmar Senha
+        current_password: Senha Atual
+
+      job:
+        company_name: Nome da Empresa
+        site_url: Site
+        category_id: Categoria
+        title: Profissional
+        location: Localização
+        description: Descrição
+        contact_message: Mensagem para Contato

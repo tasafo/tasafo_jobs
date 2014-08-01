@@ -12,10 +12,10 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
-
 group :development, :test do
   gem 'mysql2'
   gem 'pry'
+  gem 'thin'
 end
 
 
