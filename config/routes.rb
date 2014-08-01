@@ -6,9 +6,10 @@ TasafoJobs::Application.routes.draw do
   put "resumes" => "resumes#update", as: :resumes
   resources :resumes, only: [:index, :show]
 
-  
+
   get "jobs/my_jobs" => "jobs#my_jobs", as: :my_jobs
   resources :jobs
+  resources :job_categories, only: [:show]
 
   root 'jobs#index'
 end

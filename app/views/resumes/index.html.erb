@@ -1,9 +1,9 @@
-<h1><%= t("resumes.all_title") %></h1>
-
 <% JobCategory.all.each do |category| %>
   <% if category.resumes.listed.any? %>
     <section class="jobs">
-      <h1><%= category.name %></h1>
+      <h1>
+        <%= link_to category.name, job_category_path(category) %>
+      </h1>
 
       <ul class="jobs">
         <% category.resumes.listed.each do |resume| %>

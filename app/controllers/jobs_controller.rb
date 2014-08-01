@@ -2,6 +2,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :my_jobs]
 
   def index
+    @categories = JobCategory.all
   end
 
   def my_jobs
@@ -52,8 +53,8 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:company_name, :site_url, 
-                                :title, :description, :contact_message, 
+    params.require(:job).permit(:company_name, :site_url,
+                                :title, :description, :contact_message,
                                 :location, :category_id)
   end
 end

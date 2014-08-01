@@ -1,0 +1,20 @@
+<section class="jobs">
+  <h1><%= @category.name %></h1>
+
+  <% if @category.jobs.any? %>
+  <ul class="jobs">
+    <% @category.jobs.each do |job| %>
+      <li class="job">
+        <h4><%= link_to job.title, job %></h4>
+        <p><%= job.company_name %> <span><%= t(:in) %></span> <%= job.location %></p>
+      </li>
+    <% end %>
+  </ul>
+  <% end %>
+</section>
+
+<% if @category.jobs.count == 0 %>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <%= t("jobs.be_the_first") %>
+  </div>
+<% end %>
