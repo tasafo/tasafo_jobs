@@ -15,7 +15,7 @@
 
 <header>
   <h1><%= @job.title %></h1>
-  
+
 
 
   <dl>
@@ -31,9 +31,9 @@
 </header>
 
 <section class="job-description">
-  <%= @job.description.html_safe %>
+  <%= simple_format @job.description %>
 </section>
 
 <footer class="job-contact-message">
-  <%= @job.contact_message.html_safe %>
+  <%= simple_format @job.contact_message %>
 </footer>
