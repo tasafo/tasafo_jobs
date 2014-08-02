@@ -1,8 +1,14 @@
-<% JobCategory.all.each do |category| %>
+<aside id="about_site">
+  <p>
+    <strong>Tá Safo TRAMPOS</strong> é o melhor lugar para encontrar e anunciar vagas de empregos e currículos de membros da comunidade <%= link_to "Tá Safo!", "http://tasafo.org", target: "_blank" %>, a maior comunidade ágil e de tecnologia do Norte, com principal sede em Belém do Pará. Siga-nos no Twitter <%= link_to "@tasafo", "http://twitter.com/tasafo", target: "_blank" %>!
+  </p>
+</aside>
+
+<% @categories.each do |category| %>
   <% if category.resumes.listed.any? %>
     <section class="jobs">
       <h1>
-        <%= link_to category.name, job_category_path(category) %>
+        <%= link_to category.name, job_category_resumes_path(category) %>
       </h1>
 
       <ul class="jobs">

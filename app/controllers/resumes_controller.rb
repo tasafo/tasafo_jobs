@@ -2,6 +2,7 @@ class ResumesController < ApplicationController
   before_action :authenticate_user!, only: [:update, :edit]
 
   def index
+    @categories = JobCategory.all
   end
 
   def my_resume

@@ -8,7 +8,7 @@
   <% if category.jobs.any? %>
     <section class="jobs">
       <h1>
-        <%= link_to category.name, job_category_path(category) %>
+        <%= link_to category.name, job_category_jobs_path(category) %>
       </h1>
 
       <ul class="jobs">
