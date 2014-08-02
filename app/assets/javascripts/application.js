@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require tinymce/tinymce.min.js
+//= require tinymce/main.js
 //= require bootstrap
