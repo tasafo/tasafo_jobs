@@ -42,8 +42,8 @@ class ResumesController < ApplicationController
 
   private
   def resume_params
-    params.require(:resume).permit(:category_id, :name, :description, :title, 
-                                    :facebook_url, :twitter_url, :google_plus_url, 
+    params.require(:resume).permit(:category_id, :name, :description, :title,
+                                    :facebook_url, :twitter_url, :google_plus_url,
                                     :linked_in_url, :phone, :site_url, :contact_email,
                                     :location, :listed, :available)
   end
