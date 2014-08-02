@@ -90,5 +90,5 @@ TasafoJobs::Application.configure do
   }
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = { :host => 'trampos.tasafo.org' }
+  config.action_mailer.default_url_options = { :host => 'tasafotrampos.herokuapp.com' }
 end
