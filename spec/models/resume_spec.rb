@@ -8,6 +8,17 @@ describe Resume do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:category) }
     it { should validate_presence_of(:user) }
+
+    it { should allow_value("").for(:linked_in_url) }
+    it { should_not allow_value("is not a url").for(:linked_in_url) }
+    it { should allow_value("").for(:site_url) }
+    it { should_not allow_value("is not a url").for(:site_url) }
+    it { should allow_value("").for(:google_plus_url) }
+    it { should_not allow_value("is not a url").for(:google_plus_url) }
+    it { should allow_value("").for(:twitter_url) }
+    it { should_not allow_value("is not a url").for(:twitter_url) }
+    it { should allow_value("").for(:facebook_url) }
+    it { should_not allow_value("is not a url").for(:facebook_url) }
   end
 
   describe "scopes" do
