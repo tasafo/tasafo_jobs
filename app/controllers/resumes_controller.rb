@@ -32,7 +32,7 @@ class ResumesController < ApplicationController
 
     respond_to do |format|
       if @resume.update(resume_params)
-        format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
+        format.html { redirect_to @resume, notice: t('resumes.updated') }
         format.json { render :show, status: :ok, location: @resume }
       else
         format.html { render :edit }

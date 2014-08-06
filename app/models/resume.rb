@@ -5,7 +5,7 @@ class Resume < ActiveRecord::Base
   scope :listed, -> { where(listed: true) }
 
   validates_presence_of :user, :category
-  validates_presence_of :title, :name
+  validates_presence_of :title, :name, :description
 
   validates :site_url, format: { with: URI.regexp }, allow_blank: true
   validates :facebook_url, format: { with: URI.regexp }, allow_blank: true
