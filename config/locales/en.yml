@@ -11,7 +11,7 @@ en:
   warning: "Warning"
   http_reminder: "(Do not forget the http://)"
 
-  devise: 
+  devise:
     sign_in: "Sign In"
     sign_up: "Sign Up"
     sign_out: "Sign Out"

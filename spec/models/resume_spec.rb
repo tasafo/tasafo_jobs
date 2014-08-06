@@ -8,6 +8,7 @@ describe Resume do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:category) }
     it { should validate_presence_of(:user) }
+    it { should validate_presence_of(:description) }
 
     it { should allow_value("").for(:linked_in_url) }
     it { should_not allow_value("is not a url").for(:linked_in_url) }
@@ -29,7 +30,7 @@ describe Resume do
 
       it "does not return return resumes that are not listed" do
         expect(Resume.listed).to_not include resumes(:maria)
-      end       
+      end
     end
   end
 end

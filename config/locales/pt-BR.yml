@@ -46,7 +46,7 @@
     back_to_my_jobs: "← Voltar para os meus Anúncios"
     apply_message: "Candidatar-se para esse Trampo:"
     advertize: "Anunciar um Trampo"
-    my_jobs_title: "Meus Trampos Anunciados"
+    my_jobs_title: "Meus Anúncios de Trampos"
     you_have_no_jobs: "Você não tem trampos anunciados"
     contact_message_placeholder: "Como se candidatar para o Trampo?"
     location_placeholder: "ex: Belém, PA"
@@ -93,10 +93,13 @@
       resume: Perfil
       user: Usuário
       job: Trampo
+      category: "Categoria"
     attributes:
       resume:
         category_id: Categoria
+        category: Categoria
         name: Nome
+        description: "Descrição"
         title: Profissão
         location: Localização
         site_url: URL do Site
@@ -105,7 +108,7 @@
         facebook_url: URL do Facebook
         twitter_url: URL do Twitter
         google_plus_url: URL do Google Plus
-        linked_in_url: URL do Linkedin
+        linked_in_url: URL do Linked In
 
       user:
         password: Senha
@@ -116,7 +119,68 @@
         company_name: Nome da Empresa
         site_url: Site
         category_id: Categoria
+        category: Categoria
         title: Profissional
         location: Localização
         description: Descrição
         contact_message: Mensagem para Contato
+
+    errors:
+      models:
+        job:
+          attributes:
+            category:
+              blank: "não pode ficar em branco"
+            title:
+              blank: "não pode ficar em branco"
+            company_name:
+              blank: "não pode ficar em branco"
+            contact_message:
+              blank: "não pode ficar em branco"
+            description:
+              blank: "não pode ficar em branco"
+            site_url:
+              invalid: "deve ser um endereço válido como em http://www.seusite.com.br"
+        resume:
+          attributes:
+            description:
+              blank: "não pode ficar em branco"
+            category:
+              blank: "não pode ficar em branco"
+            title:
+              blank: "não pode ficar em branco"
+            name:
+              blank: "não pode ficar em branco"
+            site_url:
+              invalid: "deve ser um endereço válido como em http://www.seusite.com.br"
+            facebook_url:
+              invalid: "deve ser um endereço válido do Facebook"
+            twitter_url:
+              invalid: "deve ser um endereço válido do Twitter"
+            google_plus_url:
+              invalid: "deve ser um endereço válido do Google Plus"
+            linked_in_url:
+              invalid: "deve ser um endereço válido do Linked In"
+        user:
+          attributes:
+            email:
+              blank: "não pode ficar em branco"
+              taken: "já está sendo utilizado por outra pessoa"
+            password:
+              too_short: "deve conter ao menos 8 caracteres"
+            current_password:
+              blank: "não pode ficar em branco"
+              invalid: "está incorreta"
+            password_confirmation:
+              confirmation: "deve ser igual a sua nova senha"
+
+  errors:
+    messages:
+      not_saved: "Erro ao salvar"
+
+
+#Category translation missing: pt-BR.activerecord.errors.models.job.attributes.category.blank
+#Profissional translation missing: pt-BR.activerecord.errors.models.job.attributes.title.blank
+#Nome da Empresa translation missing: pt-BR.activerecord.errors.models.job.attributes.company_name.blank
+#Mensagem para Contato translation missing: pt-BR.activerecord.errors.models.job.attributes.contact_message.blank
+#Descrição translation missing: pt-BR.activerecord.errors.models.job.attributes.description.blank

@@ -2,9 +2,7 @@
   <div class="col-md-8">
     <%= form_for @job do |f| %>
       <% if @job.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
+        <div class="alert alert-danger">
           <ul>
           <% @job.errors.full_messages.each do |message| %>
             <li><%= message %></li>
@@ -24,7 +22,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :category_id, "Category" %>
+        <%= f.label :category_id %>
         <%= f.select :category_id, categories_for_select(@job), {}, class: "form-control" %>
       </div>
 
