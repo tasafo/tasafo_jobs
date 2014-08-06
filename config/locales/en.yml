@@ -20,6 +20,7 @@ en:
   resumes:
     edit_title: "Publish Resume"
     save: "Save resume"
+    updated: "Resume was successfully updated."
     all_title: "All Resumes"
     index_link: "All Resumes"
     be_the_first: "No resumes found... be the first to advertize a resume!"
