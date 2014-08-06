@@ -8,6 +8,7 @@
   location: "Localização"
   site: "Site"
   description: "Descrição"
+  phone: "Telefone"
   warning: "Alerta"
   general_info: "Informações Gerais"
   contact: "Contato"
