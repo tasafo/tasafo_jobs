@@ -16,8 +16,6 @@
 <header>
   <h1><%= @job.title %></h1>
 
-
-
   <dl>
     <dt><%= t(:company) %></dt>
     <dd><%= @job.company_name %></dd>
@@ -27,6 +25,8 @@
       <dt><%= t(:site) %></dt>
       <dd><%= link_to @job.site_url, @job.site_url %></dd>
     <% end %>
+    <dt><%= t(:posted_on) %></dt>
+    <dd><%= @job.created_at.strftime "%d/%m/%Y" %></dd>
   </dl>
 </header>
 

@@ -3,6 +3,7 @@ class Resume < ActiveRecord::Base
   belongs_to :category, class_name: "JobCategory"
 
   scope :listed, -> { where(listed: true) }
+  default_scope -> { order("id DESC") } 
 
   validates_presence_of :user, :category
   validates_presence_of :title, :name, :description

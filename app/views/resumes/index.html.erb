@@ -15,7 +15,7 @@
         <% category.resumes.listed.each do |resume| %>
           <li class="job">
             <h4><%= link_to resume.title, resume %></h4>
-            <p><%= resume.name %> <span><%= t(:in) %></span> <%= resume.location %></p>
+            <p><span><%= resume.name %></span> <%= t(:in) %> <span><%= resume.location %></span></p>
           </li>
         <% end %>
       </ul>
