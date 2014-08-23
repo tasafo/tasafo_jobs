@@ -23,7 +23,9 @@
           <% category.jobs.owned_by(current_user).each do |job| %>
             <li class="job">
               <h4><%= link_to job.title, job %></h4>
-              <p><%= job.company_name %> <span>em</span> <%= job.location %></p>
+              <p>
+                <span><%= job.company_name %></span> <%= t(:in)%> <span><%= job.location %></span> - <%= t(:posted_on) %> <span><%= job.created_at.strftime "%d/%m/%Y" %></span>
+              </p>
             </li>
           <% end %>
         </ul>
