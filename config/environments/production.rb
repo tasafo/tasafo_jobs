@@ -78,7 +78,6 @@ TasafoJobs::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  # config.action_mailer.default_url_options = { host: 'zaqueu.com.br' }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
@@ -90,5 +89,5 @@ TasafoJobs::Application.configure do
   }
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = { :host => 'tasafojobs.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'trampos.tasafo.org/' }
 end
