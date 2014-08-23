@@ -62,6 +62,8 @@
     confirm_destroy: "Você tem certeza que deseja apagar esse Trampo?"
     be_the_first: "Nenhum Trampo foi encontrado... seja o primeiro a anunciar um Trampo!"
     you_have_no_jobs: "Você não anunciou nenhum Trampo ainda."
+    email:
+      new_subject: "Acabaram de anunciar um novo trampo!"
 
   categories:
     select_category: "Selecione a categoria do Trampo..."
