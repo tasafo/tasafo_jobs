@@ -7,6 +7,8 @@ TasafoJobs::Application.routes.draw do
 
   resources :resumes, only: [:index, :show]
 
+  put 'users/setting', controller: :users, action: :update_setting, as: :update_user_setting
+
   resources :jobs do
     get :my_jobs, on: :collection, as: "my"
   end

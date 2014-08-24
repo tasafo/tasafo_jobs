@@ -86,7 +86,13 @@
     my_account: "Minha Conta"
     edit:
       title: "Editar Conta"
+      setting_title: "Preferências de Notificação"
+      setting_notification_description: "Desejo receber um email..."
+      setting_new_jobs_label: "quando alguém anunciar um novo trampo"
+      setting_new_resumes_label: "quando alguém publicar um novo perfil"
       submit: "Atualizar Conta"
+      setting_updated: "Suas preferências foram atualizadas com sucesso"
+      submit_setting: "Atualizar preferências"
       password_placeholder: "(deixe em branco se não quiser alterá-la)"
       confirm_current_password_placeholder: "(precisamos da sua senha atual para confirmar as modificações)"
       cancel_my_account: "Cancelar Conta"
