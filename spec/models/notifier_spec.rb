@@ -3,6 +3,7 @@ require "spec_helper"
 describe Notifier do
   fixtures :users
   fixtures :jobs
+  fixtures :settings
 
   let(:notifier) { Notifier.new }
 
@@ -11,10 +12,11 @@ describe Notifier do
       expect(notifier.new_job(jobs :ruby)).to eql(notifier)
     end
 
-    it "returns emails to be delivered to other users" do
+    it "returns emails to be delivered to users who allows to receive new jobs notifications" do
       emails = notifier.new_job(jobs :ruby).emails
 
-      expect(emails.size).to eql(User.count - 1)
+      expect(emails.size).to eql(1)
+      expect(emails.first.to).to include(users(:maria).email)
 
       emails.each do |email|
         expect(email).to be_kind_of Mail::Message
@@ -23,7 +25,7 @@ describe Notifier do
 
     it "does not return emails to job owner" do
       notifier.new_job(jobs :ruby).emails.each do |email|
-        expect(email.to).to_not include(jobs(:ruby).user.email)
+        expect(email.to).to_not include(users(:david).email)
       end
     end
   end

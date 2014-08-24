@@ -6,7 +6,7 @@ class Notifier
   end
 
   def new_job(job)
-    recipients = User.all.to_a
+    recipients = Setting.new_jobs.map { |setting| setting.user }
     recipients.delete job.user
 
     @emails = @emails + recipients.map do |recipient|
