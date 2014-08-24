@@ -17,6 +17,12 @@ describe Resume::Updater do
 
       expect(resumes(:david).reload.title).to eql "New title"
     end
+
+    it "does not notify new resume" do      
+      expect {
+        Resume::Updater.new(resumes(:david)).update(params)
+      }.to change{ActionMailer::Base.deliveries.size}.by(0)
+    end
   end
 
   context "when resume is new" do
@@ -25,21 +31,25 @@ describe Resume::Updater do
     end
 
     it "saves new resume" do
-      expect(users(:david).reload.resume).to be_blank
-
-      Resume::Updater.new(users(:david).build_resume).update(params)
-
-      expect(users(:david).reload.resume).to be_persisted
+      expect {
+        Resume::Updater.new(users(:david).build_resume).update(params)
+      }.to change{Resume.count}.by(1)
     end
 
     it "notifies new resume" do
       expect {
         Resume::Updater.new(users(:david).build_resume).update(params)
-        }.to change{ActionMailer::Base.deliveries.size}.by(1)
+      }.to change{ActionMailer::Base.deliveries.size}.by(1)
     end
 
     context "when save fails" do
-      it "does not notify new resume"
+      it "does not notify new resume" do
+        params.delete "name"
+
+        expect {
+          Resume::Updater.new(users(:david).build_resume).update(params)
+        }.to change{ActionMailer::Base.deliveries.size}.by(0)
+      end
     end
   end
 end
