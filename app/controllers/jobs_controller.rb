@@ -17,9 +17,12 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = current_user.jobs.build(job_params)
+    attrs = job_params.to_hash
+    attrs[:user] = current_user
 
-    if @job.save
+    @job = Job::Creator.new.create(attrs)
+
+    if @job.persisted?
       redirect_to @job, notice: t("jobs.successfully_created")
     else
       render :new
