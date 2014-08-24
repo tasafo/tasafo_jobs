@@ -38,6 +38,8 @@
     listed_placeholder: "Listar meu Perfil para outros me encontrarem"
     not_listed_alert: "Seu Perfil não está listado. Edite seu Perfil para que outros o encontrem!"
     not_listed_error: "Desculpe, este Perfil não está listado"
+    email:
+      new_resume_subject: "Acabaram de publicar um novo curriculo!"
 
   jobs:
     my_jobs: "Anúncios de Trampos"
@@ -63,7 +65,7 @@
     be_the_first: "Nenhum Trampo foi encontrado... seja o primeiro a anunciar um Trampo!"
     you_have_no_jobs: "Você não anunciou nenhum Trampo ainda."
     email:
-      new_subject: "Acabaram de anunciar um novo trampo!"
+      new_job_subject: "Acabaram de anunciar um novo trampo!"
 
   categories:
     select_category: "Selecione a categoria do Trampo..."

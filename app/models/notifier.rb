@@ -16,6 +16,17 @@ class Notifier
     self
   end
 
+  def new_resume(resume)
+    recipients = Setting.new_resumes.map { |setting| setting.user }
+    recipients.delete resume.user
+
+    @emails = @emails + recipients.map do |recipient|
+      ResumeMailer.new_resume(resume, recipient)
+    end
+
+    self
+  end
+
   def notify
     emails.each do |email|
       email.deliver
