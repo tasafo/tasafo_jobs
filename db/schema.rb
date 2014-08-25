@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731183515) do
+ActiveRecord::Schema.define(version: 20140824014045) do
 
   create_table "job_categories", force: true do |t|
     t.string   "name"
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 20140731183515) do
 
   add_index "resumes", ["category_id"], name: "index_resumes_on_category_id", using: :btree
   add_index "resumes", ["user_id"], name: "index_resumes_on_user_id", using: :btree
+
+  create_table "settings", force: true do |t|
+    t.integer  "user_id"
+    t.boolean  "new_jobs",    default: true
+    t.boolean  "new_resumes", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["user_id"], name: "index_settings_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

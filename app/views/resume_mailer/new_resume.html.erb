@@ -1,0 +1,37 @@
+<p>
+  Olá!
+</p>
+
+<p>
+  Um novo candidato acabou de publicar seu perfil no Tá Safo TRAMPOS!
+</p>
+
+
+<h3>
+  <%= link_to @resume.title, resume_url(@resume) %>
+</h3>
+
+<p>
+  Categoria: <%= @resume.category.name %><br />
+  Nome: <%= @resume.name %><br />
+  Local: <%= @resume.location %><br />
+</p>
+
+<p>
+  Veja mais sobre este candidato <%= link_to "em seu perfil", resume_url(@resume) %>.
+</p>
+
+<p>
+  Atenciosamente,<br />
+  <b>Equipe Tá Safo TRAMPOS</b>
+</p>
+
+<p>===</p>
+
+<p>
+  Você pode configurar seu perfil para não receber mais este tipo de mensagem.
+</p>
+
+<p>
+  <%= link_to "Configure suas preferências de notificação aqui.", edit_user_registration_url %>
+</p>

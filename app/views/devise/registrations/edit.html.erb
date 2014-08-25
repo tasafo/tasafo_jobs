@@ -1,36 +1,61 @@
-<h2><%= t("account.edit.title") %></h2>
+<div class="row">
+  <div class="col-md-6">
+    <h2><%= t("account.edit.title") %></h2>
+    
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <% if resource.errors.any? %>
+        <div class="alert alert-danger">
+          <%= devise_error_messages! %>
+        </div>
+      <% end %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <% if resource.errors.any? %>
-    <div class="alert alert-danger">
-      <%= devise_error_messages! %>
-    </div>
-  <% end %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :password %> <i><%= t("account.edit.password_placeholder") %></i>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :current_password %> <i><%= t("account.edit.confirm_current_password_placeholder") %></i><br />
+        <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+      </div>
+
+      <%= f.submit t("account.edit.submit"), class: "btn btn-primary" %>
+      <%= link_to t("account.edit.cancel_my_account"), registration_path(resource_name), class: "btn btn-danger", data: { confirm: t("account.edit.cancel_my_account_confirmation") }, method: :delete %>
+    <% end %>
   </div>
+  <div class="col-md-6">
+    <h2><%= t("account.edit.setting_title") %></h2>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <%= form_for resource.setting, url: update_user_setting_path, html: { method: :put } do |f| %>
+      <p><%= t("account.edit.setting_notification_description") %></p>
 
-  <div class="form-group">
-    <%= f.label :password %> <i><%= t("account.edit.password_placeholder") %></i>
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      <div class="form-group">
+        <%= f.check_box :new_jobs %>
+        <%= f.label :new_jobs, t("account.edit.setting_new_jobs_label") %>
+      </div>
+
+      <div class="form-group">
+        <%= f.check_box :new_resumes %>
+        <%= f.label :new_resumes, t("account.edit.setting_new_resumes_label") %>
+      </div>
+
+      <div>
+        <%= f.submit t("account.edit.submit_setting"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :current_password %> <i><%= t("account.edit.confirm_current_password_placeholder") %></i><br />
-    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-  </div>
-
-  <%= f.submit t("account.edit.submit"), class: "btn btn-primary" %>
-  <%= link_to t("account.edit.cancel_my_account"), registration_path(resource_name), class: "btn btn-danger", data: { confirm: t("account.edit.cancel_my_account_confirmation") }, method: :delete %>
-<% end %>
+</div>

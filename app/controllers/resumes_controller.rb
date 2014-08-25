@@ -29,9 +29,10 @@ class ResumesController < ApplicationController
 
   def update
     @resume = current_user.resume || current_user.build_resume
+    Resume::Updater.new(@resume).update(resume_params)
 
     respond_to do |format|
-      if @resume.update(resume_params)
+      if @resume.save
         format.html { redirect_to @resume, notice: t('resumes.updated') }
         format.json { render :show, status: :ok, location: @resume }
       else

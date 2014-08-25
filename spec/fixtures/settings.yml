@@ -1,0 +1,14 @@
+david:
+  user: david
+  new_jobs: true
+  new_resumes: true
+
+maria:
+  user: maria
+  new_jobs: true
+  new_resumes: true
+
+john:
+  user: john
+  new_jobs: false
+  new_resumes: false
