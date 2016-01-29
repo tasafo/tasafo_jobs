@@ -17,3 +17,7 @@
 
 .DS_Store
 .rvmrc
+.ruby-gemset
+.ruby-version
+config/database.yml
+coverage/

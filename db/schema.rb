@@ -13,43 +13,43 @@
 
 ActiveRecord::Schema.define(version: 20140824014045) do
 
-  create_table "job_categories", force: true do |t|
-    t.string   "name"
+  create_table "job_categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "jobs", force: true do |t|
-    t.integer  "user_id",         null: false
-    t.integer  "category_id",     null: false
-    t.string   "title",           null: false
-    t.string   "company_name",    null: false
-    t.string   "site_url"
-    t.string   "location"
-    t.text     "description",     null: false
-    t.text     "contact_message", null: false
+  create_table "jobs", force: :cascade do |t|
+    t.integer  "user_id",         limit: 4,     null: false
+    t.integer  "category_id",     limit: 4,     null: false
+    t.string   "title",           limit: 255,   null: false
+    t.string   "company_name",    limit: 255,   null: false
+    t.string   "site_url",        limit: 255
+    t.string   "location",        limit: 255
+    t.text     "description",     limit: 65535, null: false
+    t.text     "contact_message", limit: 65535, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
-  create_table "resumes", force: true do |t|
-    t.integer  "user_id",                         null: false
-    t.integer  "category_id",                     null: false
-    t.string   "name",                            null: false
-    t.string   "title",                           null: false
-    t.string   "facebook_url"
-    t.string   "twitter_url"
-    t.string   "google_plus_url"
-    t.string   "linked_in_url"
-    t.string   "phone"
-    t.string   "site_url"
-    t.string   "contact_email"
-    t.string   "location"
-    t.boolean  "available",       default: false
-    t.boolean  "listed",          default: false
-    t.text     "description",                     null: false
+  create_table "resumes", force: :cascade do |t|
+    t.integer  "user_id",         limit: 4,                     null: false
+    t.integer  "category_id",     limit: 4,                     null: false
+    t.string   "name",            limit: 255,                   null: false
+    t.string   "title",           limit: 255,                   null: false
+    t.string   "facebook_url",    limit: 255
+    t.string   "twitter_url",     limit: 255
+    t.string   "google_plus_url", limit: 255
+    t.string   "linked_in_url",   limit: 255
+    t.string   "phone",           limit: 255
+    t.string   "site_url",        limit: 255
+    t.string   "contact_email",   limit: 255
+    t.string   "location",        limit: 255
+    t.boolean  "available",                     default: false
+    t.boolean  "listed",                        default: false
+    t.text     "description",     limit: 65535,                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,27 +57,27 @@ ActiveRecord::Schema.define(version: 20140824014045) do
   add_index "resumes", ["category_id"], name: "index_resumes_on_category_id", using: :btree
   add_index "resumes", ["user_id"], name: "index_resumes_on_user_id", using: :btree
 
-  create_table "settings", force: true do |t|
-    t.integer  "user_id"
-    t.boolean  "new_jobs",    default: true
-    t.boolean  "new_resumes", default: true
+  create_table "settings", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.boolean  "new_jobs",              default: true
+    t.boolean  "new_resumes",           default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "settings", ["user_id"], name: "index_settings_on_user_id", using: :btree
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
