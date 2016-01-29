@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.2.4'
 
-gem 'rails', '4.1.2'
+gem 'rails', '4.2.5'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 
 gem 'jquery-rails'
@@ -17,14 +16,15 @@ gem 'tinymce-rails-langs'
 
 group :development, :test do
   gem 'mysql2'
-  gem 'pry'
+  gem 'pry-rails'
   gem 'thin'
+  gem 'rspec-rails', '2.14.2'
 end
 
-
 group :test do
-  gem 'rspec-rails', '2.14.2'
   gem 'shoulda-matchers'
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :production do
