@@ -1,6 +1,8 @@
+[![Code Climate](https://codeclimate.com/github/tasafo/tasafo_jobs/badges/gpa.svg)](https://codeclimate.com/github/tasafo/tasafo_jobs) [![Test Coverage](https://codeclimate.com/github/tasafo/tasafo_jobs/badges/coverage.svg)](https://codeclimate.com/github/tasafo/tasafo_jobs/coverage) [![Build Status](https://travis-ci.org/tasafo/tasafo_jobs.svg?branch=master)](https://travis-ci.org/tasafo/tasafo_jobs)
+
 Olá!
 
-Este é um projeto recente criado pela comunidade Tá Safo para listar vagas de empregos e currículos na área de TI!
+Este é um projeto criado pela comunidade Tá Safo! para listar vagas de empregos e currículos na área de TI!
 
 Para começar a contribuir:
 
@@ -18,7 +20,11 @@ Rode o Mailcatcher quando precisar testar emails
 
 Abra o Mailcatcher http://127.0.0.1:1080 no navegador
 
-#### Prepare o banco de dados
+#### Prepare o banco de dados (MySQL)
+
+`cp config/database.yml.example config/database.yml`
+
+`vim config/database.yml`
 
 `$ rake db:create`
 
