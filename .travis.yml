@@ -10,11 +10,7 @@ before_script:
   - bundle exec rake db:migrate RAILS_ENV=test
   - gem install mailcatcher
   - mailcatcher
-script: xvfb-run -a bundle exec rspec
+script: bundle exec rspec
 addons:
-  apt:
-    packages:
-      - libqtwebkit-dev
-      - xvfb
   code_climate:
     repo_token: 86bbdf4badf3f08a454c1022696446d17801aca331013de524773c7b117f2b71
