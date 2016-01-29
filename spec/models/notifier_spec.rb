@@ -20,7 +20,7 @@ describe Notifier do
       expect(emails.first.to).to include(users(:maria).email)
 
       emails.each do |email|
-        expect(email).to be_kind_of Mail::Message
+        expect(email).to be_kind_of ActionMailer::MessageDelivery
       end
     end
 
@@ -43,7 +43,7 @@ describe Notifier do
       expect(emails.first.to).to include(users(:maria).email)
 
       emails.each do |email|
-        expect(email).to be_kind_of Mail::Message
+        expect(email).to be_kind_of ActionMailer::MessageDelivery
       end
     end
 
@@ -62,7 +62,7 @@ describe Notifier do
 
       notifier.emails << emails
       notifier.emails.flatten!
-     
+
       expect {
         notifier.notify
       }.to change{ActionMailer::Base.deliveries.size}.by(User.count)

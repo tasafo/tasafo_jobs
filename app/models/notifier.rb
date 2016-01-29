@@ -29,7 +29,7 @@ class Notifier
 
   def notify
     emails.each do |email|
-      email.deliver
+      email.deliver_now
     end
   end
 end
