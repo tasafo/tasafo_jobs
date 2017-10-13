@@ -1,16 +1,28 @@
+dist: trusty
 sudo: false
 language: ruby
 rvm:
-  - 2.2.4
+  - 2.4.2
+branches:
+  only:
+    - master
+env:
+  global:
+    - DB_HOST=localhost
+    - DB_USER=postgres
+    - DB_PASS=
 services:
-  - mysql
+  - postgresql
 before_script:
-  - cp config/database.yml.travis config/database.yml
-  - mysql -e 'create database tasafo_jobs_test;'
   - bundle exec rake db:migrate RAILS_ENV=test
-  - gem install mailcatcher
-  - mailcatcher
-script: bundle exec rspec
+  - bundle exec rake db:test:prepare
+script:
+  - bundle exec rspec
+after_success:
+  - bundle exec codeclimate-test-reporter
 addons:
   code_climate:
     repo_token: 86bbdf4badf3f08a454c1022696446d17801aca331013de524773c7b117f2b71
+notifications:
+  slack:
+    secure: Gvi2l8TIyg0cw8DIW7QCd4sKdFAeRmyrAILwV7K+ge0Y8ljRACHDwDONjURMHJfkgTZnqkh8wdJHjZ9GG2269q2UiRTdciGLoABiHSXqrQj0MmYTYygqTumCoSlxg+s5uzJMVYodnXZqYlRfnme58uqrqJgtIjabGGKtbGksM9o=

@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/tasafo/tasafo_jobs/badges/gpa.svg)](https://codeclimate.com/github/tasafo/tasafo_jobs) [![Test Coverage](https://codeclimate.com/github/tasafo/tasafo_jobs/badges/coverage.svg)](https://codeclimate.com/github/tasafo/tasafo_jobs/coverage) [![Build Status](https://travis-ci.org/tasafo/tasafo_jobs.svg?branch=master)](https://travis-ci.org/tasafo/tasafo_jobs)
+[![Code Climate](https://codeclimate.com/github/tasafo/tasafo_jobs/badges/gpa.svg)](https://codeclimate.com/github/tasafo/tasafo_jobs) [![Test Coverage](https://codeclimate.com/github/tasafo/tasafo_jobs/badges/coverage.svg)](https://codeclimate.com/github/tasafo/tasafo_jobs/coverage) [![Build Status](https://travis-ci.org/tasafo/tasafo_jobs.svg?branch=master)](https://travis-ci.org/tasafo/tasafo_jobs) [![security](https://hakiri.io/github/tasafo/tasafo_jobs/master.svg)](https://hakiri.io/github/tasafo/tasafo_jobs/master)
 
 Olá!
 
