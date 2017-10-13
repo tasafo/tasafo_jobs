@@ -22,9 +22,9 @@ Abra o Mailcatcher http://127.0.0.1:1080 no navegador
 
 #### Prepare o banco de dados (MySQL)
 
-`cp config/database.yml.example config/database.yml`
+`cp .env.example .env`
 
-`vim config/database.yml`
+`vim .env`
 
 `$ rake db:create`
 
@@ -36,11 +36,9 @@ Abra o Mailcatcher http://127.0.0.1:1080 no navegador
 
 `$ rspec .`
 
-#### Rode o SEED em desenvolvimento e também em produção!
+#### Rode o SEED em desenvolvimento
 
 `$ rake db:seed`
-
-`$ heroku run rake db:seed`
 
 #### Para rodar o servidor local
 
