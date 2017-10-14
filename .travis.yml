@@ -26,4 +26,4 @@ addons:
     repo_token: 86bbdf4badf3f08a454c1022696446d17801aca331013de524773c7b117f2b71
 notifications:
   slack:
-    secure: Gvi2l8TIyg0cw8DIW7QCd4sKdFAeRmyrAILwV7K+ge0Y8ljRACHDwDONjURMHJfkgTZnqkh8wdJHjZ9GG2269q2UiRTdciGLoABiHSXqrQj0MmYTYygqTumCoSlxg+s5uzJMVYodnXZqYlRfnme58uqrqJgtIjabGGKtbGksM9o=
+    secure: Vceh/wL4UvYocYpT6KnfPhbRUMPdnHdonwB6Q/SHdFav8n5B4hnCwmdM4qBWo7AyfsO2VIvvP9PzPvKHhJB2AX2z9W+eKddP08jXPoZCsRVh+KwIHnp6q3SKOB5X8XMes8kSaaHsGBEoicwAyxbSmUx5xbyS1bKgDAE/Ye0BUSA=
