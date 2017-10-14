@@ -17,6 +17,8 @@ gem 'pg', '0.18.4'
 
 gem 'dotenv-rails'
 
+gem 'rake', '10.5.0'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'thin'
