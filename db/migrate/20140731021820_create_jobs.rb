@@ -8,11 +8,11 @@ class CreateJobs < ActiveRecord::Migration
       t.string :company_name, null: false
       t.string :site_url
       t.string :location
-      
+
       t.text :description, null: false
       t.text :contact_message, null: false
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

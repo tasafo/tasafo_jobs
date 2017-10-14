@@ -20,7 +20,7 @@ class CreateResumes < ActiveRecord::Migration
 
       t.text :description, null: false
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

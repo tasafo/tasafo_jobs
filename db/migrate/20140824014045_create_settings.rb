@@ -5,7 +5,7 @@ class CreateSettings < ActiveRecord::Migration
       t.boolean :new_jobs, default: true
       t.boolean :new_resumes, default: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

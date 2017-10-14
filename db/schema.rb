@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20140824014045) do
 
   create_table "job_categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20140824014045) do
     t.string   "location"
     t.text     "description",     null: false
     t.text     "contact_message", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 20140824014045) do
     t.boolean  "available",       default: false
     t.boolean  "listed",          default: false
     t.text     "description",                     null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "resumes", ["category_id"], name: "index_resumes_on_category_id", using: :btree
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20140824014045) do
     t.integer  "user_id"
     t.boolean  "new_jobs",    default: true
     t.boolean  "new_resumes", default: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "settings", ["user_id"], name: "index_settings_on_user_id", using: :btree
@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(version: 20140824014045) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
