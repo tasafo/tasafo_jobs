@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.2'
+ruby '2.4.3'
 
 gem 'rails', '4.2.10'
 gem 'sass-rails', '~> 4.0.3'
@@ -31,6 +31,3 @@ group :test do
   gem 'codeclimate-test-reporter'
 end
 
-group :production do
-  gem 'rails_12factor'
-end
