@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.4.3'
+ruby '2.5.0'
 
 gem 'rails', '4.2.10'
+gem 'rails-i18n'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
@@ -13,16 +14,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 
-gem 'pg', '0.18.4'
+gem 'pg', '0.20.0'
 
 gem 'dotenv-rails'
-
-gem 'rake', '11.3.0'
 
 group :development, :test do
   gem 'pry-rails'
   gem 'thin'
-  gem 'rspec-rails', '2.14.2'
+  gem 'rspec-rails', '3.7.2'
 end
 
 group :test do
@@ -30,4 +29,3 @@ group :test do
   gem 'simplecov'
   gem 'codeclimate-test-reporter'
 end
-

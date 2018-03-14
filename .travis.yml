@@ -2,7 +2,7 @@ dist: trusty
 sudo: false
 language: ruby
 rvm:
-  - 2.4.3
+  - 2.5.0
 branches:
   only:
     - master
@@ -17,7 +17,7 @@ before_script:
   - bundle exec rake db:migrate
   - bundle exec rake db:test:prepare
 script:
-  - bundle exec rspec
+  - bundle exec rake spec
 after_success:
   - bundle exec codeclimate-test-reporter
 addons:
@@ -26,3 +26,10 @@ addons:
 notifications:
   slack:
     secure: Vceh/wL4UvYocYpT6KnfPhbRUMPdnHdonwB6Q/SHdFav8n5B4hnCwmdM4qBWo7AyfsO2VIvvP9PzPvKHhJB2AX2z9W+eKddP08jXPoZCsRVh+KwIHnp6q3SKOB5X8XMes8kSaaHsGBEoicwAyxbSmUx5xbyS1bKgDAE/Ye0BUSA=
+deploy:
+  provider: heroku
+  app: tasafojobs
+  api_key:
+    secure: QAWOYs+BbDKr/+XARPWWyGSEVjg9sgs7ZSfQV+HLZA/Vs0yCzEdLQEOd0a0tPzIWuNwKuGWdltu6eUBXgbP4M0p3r3s/YO1bm3WT32+6KW5j4xfdpuzLuiQOTJHZ/db4rCAYgy/qo2uQVBL0PNelY94B4IyZ/1no4ZVeNlzarCQ=
+  run:
+    - "rake db:migrate"

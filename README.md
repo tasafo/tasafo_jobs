@@ -10,11 +10,11 @@ Para começar a contribuir:
 
 #### Clone seu repositório fork localmente
 
-#### Instale o Mailcatcher para testar emails no ambiente local
+#### Instale o Mailcatcher para testar e-mails no ambiente local
 
 `$ gem install mailcatcher`
 
-Rode o Mailcatcher quando precisar testar emails
+Rode o Mailcatcher quando precisar testar e-mails
 
 `$ mailcatcher`
 
