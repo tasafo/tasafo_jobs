@@ -57,3 +57,8 @@ mark@mail.com    / pass: 12345678
 terry@mail.com   / pass: 12345678
 
 amanda@mail.com  / pass: 12345678
+
+#### Ambiente de produção
+Deve ser gerado o token de segurança
+
+    SECRET_KEY_BASE=$(rake secret)
