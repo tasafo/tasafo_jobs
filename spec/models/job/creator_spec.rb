@@ -1,8 +1,9 @@
-require "spec_helper"
+require 'rails_helper'
 
 describe Job::Creator do
   fixtures :jobs
   fixtures :users
+  fixtures :settings
   fixtures :job_categories
 
   let(:params) { attrs = jobs(:ruby).attributes; attrs.delete "id"; attrs }
@@ -20,18 +21,19 @@ describe Job::Creator do
   context "when job is created" do
     it "delivers new job notification email to all users" do
       ActionMailer::Base.deliveries = []
-      Job::Creator.new.create(params)
-      expect(ActionMailer::Base.deliveries.size).to eql 1
+      expect {
+        Job::Creator.new.create(params)
+      }.to change{ActionMailer::Base.deliveries.count}.by(1)
     end
   end
 
   context "when job is not saved" do
-    let(:invalid_params)  { params["user"] = nil; params }
+    let(:invalid_params) { params["user"] = nil; params }
 
     it "does not deliver new job notification email to all users" do
       expect {
         Job::Creator.new.create(invalid_params)
-      }.to change{ActionMailer::Base.deliveries.size}.by(0)
+      }.to change{ActionMailer::Base.deliveries.count}.by(0)
     end
   end
 end

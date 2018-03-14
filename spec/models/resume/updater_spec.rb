@@ -1,8 +1,9 @@
-require "spec_helper"
+require 'rails_helper'
 
 describe Resume::Updater do
   fixtures :resumes
   fixtures :users
+  fixtures :settings
 
   let!(:params) { attrs = resumes(:david).attributes; attrs.delete "id"; attrs }
 
@@ -21,7 +22,7 @@ describe Resume::Updater do
     it "does not notify new resume" do      
       expect {
         Resume::Updater.new(resumes(:david)).update(params)
-      }.to change{ActionMailer::Base.deliveries.size}.by(0)
+      }.to change{ActionMailer::Base.deliveries.count}.by(0)
     end
   end
 
@@ -39,7 +40,7 @@ describe Resume::Updater do
     it "notifies new resume" do
       expect {
         Resume::Updater.new(users(:david).build_resume).update(params)
-      }.to change{ActionMailer::Base.deliveries.size}.by(1)
+      }.to change{ActionMailer::Base.deliveries.count}.by(1)
     end
 
     context "when save fails" do
@@ -48,7 +49,7 @@ describe Resume::Updater do
 
         expect {
           Resume::Updater.new(users(:david).build_resume).update(params)
-        }.to change{ActionMailer::Base.deliveries.size}.by(0)
+        }.to change{ActionMailer::Base.deliveries.count}.by(0)
       end
     end
   end

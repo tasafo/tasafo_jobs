@@ -1,9 +1,9 @@
-require "spec_helper"
+require 'rails_helper'
 
 describe Notifier do
   fixtures :users
-  fixtures :jobs
   fixtures :settings
+  fixtures :jobs
   fixtures :resumes
 
   let(:notifier) { Notifier.new }

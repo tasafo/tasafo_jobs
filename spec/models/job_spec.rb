@@ -1,7 +1,8 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Job do
   fixtures :users
+  fixtures :settings
   fixtures :jobs
 
   describe "Validations" do
