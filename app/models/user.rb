@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   has_many  :jobs,    dependent: :destroy
   has_one   :resume,  dependent: :destroy
   has_one   :setting, dependent: :destroy
+
+  after_create do
+    Setting.create(user: self)
+  end
 end
