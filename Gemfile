@@ -8,6 +8,7 @@ gem 'dotenv-rails'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'devise'
+gem 'devise-i18n'
 
 gem 'jquery-rails'
 gem 'jbuilder'
