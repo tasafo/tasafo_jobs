@@ -18,6 +18,10 @@ gem 'tinymce-rails-langs'
 gem 'pg', '0.21.0'
 gem 'puma'
 
+group :development do
+  gem 'listen'
+end
+
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '3.7.2'
