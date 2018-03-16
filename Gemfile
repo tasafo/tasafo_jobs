@@ -2,20 +2,20 @@ source 'https://rubygems.org'
 
 ruby '2.5.0'
 
-gem 'rails', '4.2.10'
+gem 'rails', '5.1.5'
 gem 'rails-i18n'
 gem 'dotenv-rails'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails'
+gem 'uglifier'
 gem 'devise'
 
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 
-gem 'pg', '0.20.0'
+gem 'pg', '0.21.0'
 gem 'puma'
 
 group :development, :test do
@@ -24,11 +24,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'shoulda-matchers', '2.6.1'
-  gem 'simplecov'
-  gem 'codeclimate-test-reporter'
-end
-
-group :production do
-  gem 'rails_12factor'
+  gem 'shoulda-matchers'
+  gem 'simplecov', '~> 0.16'
+  gem 'codeclimate-test-reporter', '~> 1.0'
 end

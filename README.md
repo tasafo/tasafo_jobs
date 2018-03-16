@@ -26,23 +26,19 @@ Abra o Mailcatcher http://127.0.0.1:1080 no navegador
 
 `vim .env`
 
-`$ rake db:create`
-
-`$ rake db:migrate`
-
-`$ rake db:test:prepare`
+`$ rails db:create db:migrate db:test:prepare`
 
 #### Rode os testes
 
-`$ rspec .`
+`$ rails spec`
 
 #### Rode o SEED em desenvolvimento
 
-`$ rake db:seed`
+`$ rails db:seed`
 
 #### Para rodar o servidor local
 
-`$ rails s`
+`$ rails server`
 
 #### Cadastre-se ou entre com os seguintes usuários criados pelo SEED em desenvolvimento
 
@@ -62,3 +58,11 @@ amanda@mail.com  / pass: 12345678
 Deve ser gerado o token de segurança
 
     SECRET_KEY_BASE=$(rake secret)
+
+Configure a gravação de logs
+
+    RAILS_LOG_TO_STDOUT=enabled
+
+Configure a compilação de assets
+
+    RAILS_SERVE_STATIC_FILES=enabled

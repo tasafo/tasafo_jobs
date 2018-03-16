@@ -1,4 +1,4 @@
-class CreateResumes < ActiveRecord::Migration
+class CreateResumes < ActiveRecord::Migration[4.2]
   def change
     create_table :resumes do |t|
       t.belongs_to :user, index: true, null: false
