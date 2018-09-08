@@ -13,7 +13,7 @@
   warning: "Alerta"
   general_info: "Informações Gerais"
   contact: "Contato"
-  http_reminder: "(Não esqueça do http://)"
+  http_reminder: "(Não esqueça do https://)"
   advertize: Anuncie
 
   devise:
@@ -56,7 +56,7 @@
     location_placeholder: "ex: Belém, PA"
     description_placeholder: "Adicione uma descrição completa do trampo, como requisitos e expectativas"
     title_placeholder: "ex: Programador Ruby"
-    site_url_placeholder: "ex: http://www.yoursite.com"
+    site_url_placeholder: "ex: https://www.seusite.com.br"
     successfully_created: "Uhuuu! Você anunciou um novo Trampo!"
     successfully_updated: "Seu trampo foi atualizado"
     successfully_destroyed: "Você deletou um Trampo"
@@ -152,7 +152,7 @@
             description:
               blank: "não pode ficar em branco"
             site_url:
-              invalid: "deve ser um endereço válido como em http://www.seusite.com.br"
+              invalid: "deve ser um endereço válido como em https://www.seusite.com.br"
         resume:
           attributes:
             description:
@@ -164,7 +164,7 @@
             name:
               blank: "não pode ficar em branco"
             site_url:
-              invalid: "deve ser um endereço válido como em http://www.seusite.com.br"
+              invalid: "deve ser um endereço válido como em https://www.seusite.com.br"
             facebook_url:
               invalid: "deve ser um endereço válido do Facebook"
             twitter_url:
