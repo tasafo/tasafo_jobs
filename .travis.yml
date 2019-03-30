@@ -2,27 +2,27 @@ dist: trusty
 sudo: false
 language: ruby
 rvm:
-  - 2.5.5
+- 2.5.5
 branches:
   only:
-    - master
+  - master
 env:
   global:
-    - DB_USER=postgres
-    - DB_PASS=
+  - DB_USER=postgres
+  - DB_PASS=
 services:
-  - postgresql
+- postgresql
 before_install:
-  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
-  - gem install bundler -v '< 2'
+- gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+- gem install bundler -v '< 2'
 before_script:
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate
-  - bundle exec rails db:test:prepare
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+- bundle exec rails db:test:prepare
 script:
-  - bundle exec rails spec
+- bundle exec rails spec
 after_success:
-  - bundle exec codeclimate-test-reporter
+- bundle exec codeclimate-test-reporter
 addons:
   code_climate:
     repo_token: 86bbdf4badf3f08a454c1022696446d17801aca331013de524773c7b117f2b71
@@ -30,6 +30,6 @@ deploy:
   provider: heroku
   app: tasafojobs
   api_key:
-    secure: QAWOYs+BbDKr/+XARPWWyGSEVjg9sgs7ZSfQV+HLZA/Vs0yCzEdLQEOd0a0tPzIWuNwKuGWdltu6eUBXgbP4M0p3r3s/YO1bm3WT32+6KW5j4xfdpuzLuiQOTJHZ/db4rCAYgy/qo2uQVBL0PNelY94B4IyZ/1no4ZVeNlzarCQ=
+    secure: BeNgp4MYRrh0HfoxSlso7lh873h797OCu4prS9XpmTLzgKjKML7spnU95zQSMMdz35eCdaChSnXO4Pc25JPjHt5Lu3VF2/duNa2L7UThY7VFnqPl6vgukw+6L3FGVMLPF6M9I48PY4a3wlnd9TKd3XNBehvoNwpWr2MdU1lj4Rw=
   run:
-    - "rails db:migrate"
+  - rails db:migrate
