@@ -10,6 +10,12 @@ Para começar a contribuir:
 
 #### Clone seu repositório fork localmente
 
+#### Você vai precisar dos bancos de dados [PostgreSQL](https://www.postgresql.org/) e [Redis](https://redis.io/)
+
+#### Instale o Foreman
+
+`$ gem install foreman`
+
 #### Instale o Mailcatcher para testar e-mails no ambiente local
 
 `$ gem install mailcatcher`
@@ -20,7 +26,7 @@ Rode o Mailcatcher quando precisar testar e-mails
 
 Abra o Mailcatcher http://127.0.0.1:1080 no navegador
 
-#### Prepare o banco de dados (MySQL)
+#### Prepare o banco de dados
 
 `cp .env.example .env`
 
@@ -38,7 +44,7 @@ Abra o Mailcatcher http://127.0.0.1:1080 no navegador
 
 #### Para rodar o servidor local
 
-`$ rails server`
+`$ foreman start`
 
 #### Cadastre-se ou entre com os seguintes usuários criados pelo SEED em desenvolvimento
 

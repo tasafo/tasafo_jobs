@@ -57,7 +57,7 @@ describe Notifier do
   describe "#notify" do
     it "delivers new job notification email to all users" do
       emails = User.all.map do |recipient|
-        JobMailer.new_job(jobs(:ruby), recipient)
+        JobMailer.new_job(jobs(:ruby).id, recipient.id)
       end
 
       notifier.emails << emails

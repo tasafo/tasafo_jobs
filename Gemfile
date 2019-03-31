@@ -19,6 +19,8 @@ gem 'tinymce-rails-langs'
 gem 'pg', '0.21.0'
 gem 'puma'
 
+gem 'sidekiq'
+
 group :development do
   gem 'listen'
 end

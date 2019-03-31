@@ -6,30 +6,28 @@ class Notifier
   end
 
   def new_job(job)
-    recipients = Setting.new_jobs.map { |setting| setting.user }
+    recipients = Setting.new_jobs.map(&:user)
     recipients.delete job.user
 
-    @emails = @emails + recipients.map do |recipient|
-      JobMailer.new_job(job, recipient)
+    @emails += recipients.map do |recipient|
+      JobMailer.new_job(job.id, recipient.id)
     end
 
     self
   end
 
   def new_resume(resume)
-    recipients = Setting.new_resumes.map { |setting| setting.user }
+    recipients = Setting.new_resumes.map(&:user)
     recipients.delete resume.user
 
-    @emails = @emails + recipients.map do |recipient|
-      ResumeMailer.new_resume(resume, recipient)
+    @emails += recipients.map do |recipient|
+      ResumeMailer.new_resume(resume.id, recipient.id)
     end
 
     self
   end
 
   def notify
-    emails.each do |email|
-      email.deliver_now
-    end
+    emails.each(&:deliver_later)
   end
 end
