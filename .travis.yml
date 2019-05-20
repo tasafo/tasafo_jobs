@@ -20,10 +20,14 @@ before_script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
 - bundle exec rails db:test:prepare
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- ./cc-test-reporter before-build
 script:
 - bundle exec rails spec
-after_success:
-- bundle exec codeclimate-test-reporter
+after_script:
+- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- rm cc-test-reporter
 addons:
   code_climate:
     repo_token: 86bbdf4badf3f08a454c1022696446d17801aca331013de524773c7b117f2b71

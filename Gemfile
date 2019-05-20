@@ -33,5 +33,4 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'simplecov', '~> 0.16'
-  gem 'codeclimate-test-reporter', '~> 1.0'
 end
