@@ -10,11 +10,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
 .DS_Store
 .rvmrc
 .ruby-gemset
 .ruby-version
 coverage/
 .env
-start-servers.sh
+start.sh
+cc-test-reporter
+vendor/bundle/
