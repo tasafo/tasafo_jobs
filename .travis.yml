@@ -1,8 +1,8 @@
-dist: trusty
+dist: xenial
 sudo: false
 language: ruby
 rvm:
-- 2.5.5
+- 2.6.3
 branches:
   only:
   - master
@@ -29,9 +29,6 @@ script:
 - bundle exec rails spec
 after_script:
 - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-addons:
-  code_climate:
-    repo_token: 86bbdf4badf3f08a454c1022696446d17801aca331013de524773c7b117f2b71
 deploy:
   provider: heroku
   app: tasafojobs
