@@ -1,11 +1,7 @@
-dist: xenial
+dist: bionic
 sudo: false
 language: ruby
-rvm:
-- 2.6.3
-branches:
-  only:
-  - master
+rvm: 2.6.3
 env:
   global:
   - DB_USER=postgres
@@ -13,11 +9,12 @@ env:
 services:
 - postgresql
 - redis-server
+cache:
+  bundler: true
+bundler_args: --without production
 before_install:
 - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
 - gem install bundler -v '< 2'
-- "echo 'gem: --no-document' > ~/.gemrc"
-- "echo '--colour' > ~/.rspec"
 before_script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
@@ -27,11 +24,14 @@ before_script:
 - ./cc-test-reporter before-build
 script:
 - bundle exec rails spec
-after_script:
+after_success:
 - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:
   provider: heroku
   app: tasafojobs
+  skip_cleanup: true
+  on:
+    branch: master
   api_key:
     secure: BeNgp4MYRrh0HfoxSlso7lh873h797OCu4prS9XpmTLzgKjKML7spnU95zQSMMdz35eCdaChSnXO4Pc25JPjHt5Lu3VF2/duNa2L7UThY7VFnqPl6vgukw+6L3FGVMLPF6M9I48PY4a3wlnd9TKd3XNBehvoNwpWr2MdU1lj4Rw=
   run:

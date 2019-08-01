@@ -14,7 +14,7 @@ Para começar a contribuir:
 
 #### Você vai precisar dos bancos de dados [PostgreSQL](https://www.postgresql.org/) e [Redis](https://redis.io/)
 
-##### Voce pode usar o [docker compose](https://docs.docker.com/compose/) com o comando
+##### Você pode usar o [docker compose](https://docs.docker.com/compose/) com o comando
 
 `$ docker-compose up`
 
