@@ -18,11 +18,11 @@ RSpec.describe JobsController, type: :controller do
                        user: david, days_to_expire: 40)
 
     @job_expired = Job.create!(company_name: 'microsoft', site_url: '',
-                           title: 'Trampo',
-                           description: 'vaga para sistema de informacao',
-                           contact_message: 'documentos',
-                           location: 'bairro proximo', category: programming,
-                           user: david, days_to_expire: 0)
+                               title: 'Trampo',
+                               description: 'vaga para sistema de informacao',
+                               contact_message: 'documentos',
+                               location: 'bairro proximo', category: programming,
+                               user: david, days_to_expire: 0)
   end
 
   describe 'return current jobs' do
