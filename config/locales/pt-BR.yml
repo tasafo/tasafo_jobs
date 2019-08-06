@@ -9,6 +9,11 @@
   location: "Localização"
   site: "Site"
   description: "Descrição"
+  days_to_expire: 'Vaga expira em'
+  vacancy_completed: 'Vaga Preenchida?'
+  confirmation: 'Sim'
+  negation: 'Não'
+  days: 'Dias'
   phone: "Telefone"
   warning: "Alerta"
   general_info: "Informações Gerais"
@@ -64,6 +69,8 @@
     confirm_destroy: "Você tem certeza que deseja apagar esse Trampo?"
     be_the_first: "Nenhum Trampo foi encontrado... seja o primeiro a anunciar um Trampo!"
     you_have_no_jobs: "Você não anunciou nenhum Trampo ainda."
+    expired_in: 'Expira em'
+    expired: ' (Vaga expirada)'
     email:
       new_job_subject: "Acabaram de anunciar um novo trampo!"
 
@@ -136,6 +143,8 @@
         location: Localização
         description: Descrição
         contact_message: Mensagem para Contato
+        days_to_expire: Dias para Expirar
+        vacancy_completed: Vaga foi Preenchida?
 
     errors:
       models:

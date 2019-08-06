@@ -3,30 +3,52 @@
     <strong>Tá Safo TRAMPOS</strong> é o melhor lugar para encontrar e anunciar vagas de empregos e currículos de membros da comunidade <%= link_to "Tá Safo!", "https://tasafo.org", target: "_blank" %>, a maior comunidade ágil e de tecnologia do Norte, com principal sede em Belém do Pará. Siga-nos no Twitter <%= link_to "@tasafo", "https://twitter.com/tasafo", target: "_blank" %>!
   </p>
 </aside>
-
-<% @categories.each do |category| %>
-  <% if category.jobs.any? %>
-    <section class="jobs">
-      <h1>
-        <%= link_to category.name, job_category_jobs_path(category) %>
-      </h1>
-
-      <ul class="jobs">
-        <% category.jobs.each do |job| %>
-          <li class="job">
-            <h4><%= link_to job.title, job %></h4>
-            <p>
-              <span><%= job.company_name %></span> <%= t(:in)%> <span><%= job.location %></span> - <%= t(:posted_on) %> <span><%= job.created_at.strftime "%d/%m/%Y" %></span>
-            </p>
-          </li>
-        <% end %>
-      </ul>
-    </section>
-  <% end %>
+<%= form_tag(jobs_path, { method: :get }) do %>
+  <%= check_box_tag 'jobs', :checked, checkbox_checked(params[:jobs]) %>
+  <span> Mostrar Vagas Antigas</span>
 <% end %>
 
-<% if Job.count == 0 %>
+<div>
+  <% @categories.each do |category| %>
+    <% if category.jobs.any? %>
+      <section class="jobs">
+        <h1>
+          <%= link_to category.name, job_category_jobs_path(category) %>
+        </h1>
+
+        <ul class="jobs">
+          <% category.jobs.each do |job| %>
+            <% search_jobs(job) %>
+            <li class="job">
+              <h4><%= link_to job.title, job %></h4>
+
+              <p>
+                <span><%= job.company_name %></span> <%= t(:in)%> <span><%= job.location %></span> - <%= t(:posted_on) %> <span><%= job.created_at.strftime "%d/%m/%Y" %>
+                </span>
+                <%= @expired_in %> <span><%= @expired %></span>
+              </p>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+    <%end%>
+  <%end%>
+</div>
+
+
+<% if @categories.size == 0 %>
   <div class="alert alert-danger alert-dismissible" role="alert">
     <%= t("jobs.be_the_first") %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#jobs').change(function(evt) {
+      evt.preventDefault();
+
+      $('#jobs').parent().submit();
+    });
+  });
+</script>

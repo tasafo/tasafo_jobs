@@ -1,6 +1,8 @@
 ruby:
   user: david
   category: programming_category
+  days_to_expire: 60
+  vacancy_completed: true
   title: "Ruby Developer"
   company_name: "37 SIgnals"
   description: "Lorem Ipsum"
@@ -10,6 +12,8 @@ ruby:
 designer:
   user: maria
   category: design_category
+  days_to_expire: 60
+  vacancy_completed: false
   title: "Web Designer"
   company_name: "Google"
   description: "Lorem Ipsum"

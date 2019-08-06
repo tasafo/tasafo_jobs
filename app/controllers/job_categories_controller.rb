@@ -10,6 +10,6 @@ class JobCategoriesController < ApplicationController
   private
 
   def get_category
-    @category = JobCategory.find params[:job_category_id]
+    @category = JobCategory.find(params[:job_category_id])
   end
 end

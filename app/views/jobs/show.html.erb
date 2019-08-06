@@ -19,14 +19,33 @@
   <dl>
     <dt><%= t(:company) %></dt>
     <dd><%= @job.company_name %></dd>
+    
     <dt><%= t(:location) %></dt>
     <dd><%= @job.location %></dd>
+    
     <% if @job.site_url.present? %>
       <dt><%= t(:site) %></dt>
       <dd><%= link_to @job.site_url, @job.site_url %></dd>
     <% end %>
+    
     <dt><%= t(:posted_on) %></dt>
     <dd><%= @job.created_at.strftime "%d/%m/%Y" %></dd>
+    
+    <dt><%= t(:days_to_expire) %></dt>
+    <dd><%= @job.days_to_expire %> 
+      <%if @job.days_to_expire.nil? %>
+        Não informado
+      <% else %>
+        <%= t(:days) %> 
+      <% end %>
+    </dd>
+
+    <dt><%= t(:vacancy_completed) %></dt>
+      <% if @job.vacancy_completed == true%>
+        <dd><%= t(:confirmation) %></dd>
+      <% else %>
+        <dd><%= t(:negation) %></dd>
+      <% end %>
   </dl>
 </header>
 
