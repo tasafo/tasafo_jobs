@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Tests for jobs_spec
 require 'rails_helper'
 
 describe Job do

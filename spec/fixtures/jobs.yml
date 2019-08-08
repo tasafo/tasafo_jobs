@@ -1,13 +1,14 @@
 ruby:
   user: david
   category: programming_category
-  days_to_expire: 60
+  days_to_expire: 30
   vacancy_completed: true
   title: "Ruby Developer"
   company_name: "37 SIgnals"
   description: "Lorem Ipsum"
   contact_message: "Lorem Ipsum"
   location: "San Francisco, CA, USA"
+  created_at: '2019-07-01 11:04:44 UTC'
 
 designer:
   user: maria
@@ -19,3 +20,28 @@ designer:
   description: "Lorem Ipsum"
   contact_message: "Lorem Ipsum"
   location: "San Francisco, CA, USA"
+  created_at: '2019-08-07 11:04:44 UTC'
+
+programmer:
+  user: lucas
+  category: business_category
+  days_to_expire: 30
+  vacancy_completed: false
+  title: "Developer"
+  company_name: "Microsoft"
+  description: "Lorem Ipsum"
+  contact_message: "Lorem Ipsum"
+  location: "São Francisco, PA, BR"
+  created_at: '2019-08-08 11:04:44 UTC'
+
+front_end:
+  user: julia
+  category: other_it_category
+  days_to_expire: 30
+  vacancy_completed: false
+  title: "Web Designer"
+  company_name: "Google"
+  description: "Lorem Ipsum"
+  contact_message: "Lorem Ipsum"
+  location: "San Francisco, CA, USA"
+  created_at: '2019-05-01 13:08:32 UTC'
