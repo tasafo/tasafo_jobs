@@ -60,7 +60,7 @@ class JobsController < ApplicationController
 
   def search_jobs
     if params[:jobs] != 'checked'
-      JobCategory.with_joins.order('jobs.created_at DESC')
+      JobCategory.with_joins.where('jobs.expire_at >= ?', DateTime.now)
     else
       JobCategory.with_joins.order('jobs.created_at ASC')
     end
@@ -69,7 +69,7 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:company_name, :site_url,
                                 :title, :description, :contact_message,
-                                :location, :category_id, :days_to_expire,
+                                :location, :category_id, :expire_at,
                                 :vacancy_completed)
   end
 end

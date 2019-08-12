@@ -143,7 +143,7 @@
         location: Localização
         description: Descrição
         contact_message: Mensagem para Contato
-        days_to_expire: Dias para Expirar
+        expire_at: Dias para Expirar
         vacancy_completed: Vaga foi Preenchida?
 
     errors:

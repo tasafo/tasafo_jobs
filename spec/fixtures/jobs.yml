@@ -1,7 +1,7 @@
 ruby:
   user: david
   category: programming_category
-  days_to_expire: 30
+  expire_at: Mon, 12 Aug 2019
   vacancy_completed: true
   title: "Ruby Developer"
   company_name: "37 SIgnals"
@@ -13,7 +13,7 @@ ruby:
 designer:
   user: maria
   category: design_category
-  days_to_expire: 60
+  expire_at: Mon, 07 Aug 2019
   vacancy_completed: false
   title: "Web Designer"
   company_name: "Google"
@@ -25,7 +25,7 @@ designer:
 programmer:
   user: lucas
   category: business_category
-  days_to_expire: 30
+  expire_at: Mon, 20 Aug 2019
   vacancy_completed: false
   title: "Developer"
   company_name: "Microsoft"
@@ -37,7 +37,7 @@ programmer:
 front_end:
   user: julia
   category: other_it_category
-  days_to_expire: 30
+  expire_at: Mon, 01 Aug 2019
   vacancy_completed: false
   title: "Web Designer"
   company_name: "Google"

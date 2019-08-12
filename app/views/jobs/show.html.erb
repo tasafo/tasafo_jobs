@@ -32,11 +32,11 @@
     <dd><%= @job.created_at.strftime "%d/%m/%Y" %></dd>
     
     <dt><%= t(:days_to_expire) %></dt>
-    <dd><%= @job.days_to_expire %> 
-      <%if @job.days_to_expire.nil? %>
+    <dd><%= @job.expire_at.strftime "%d/%m/%Y" %> 
+      <%if @job.expire_at.nil? %>
         Não informado
       <% else %>
-        <%= t(:days) %> 
+        
       <% end %>
     </dd>
 

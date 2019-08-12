@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190625125913) do
+ActiveRecord::Schema.define(version: 20190811034224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20190625125913) do
     t.text "contact_message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "days_to_expire"
     t.boolean "vacancy_completed"
+    t.datetime "expire_at"
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
