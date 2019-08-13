@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create update edit my_jobs]
 
   def index
-    @categories = search_jobs
+    @categories = Job.new.search_jobs(params[:jobs])
   end
 
   def my_jobs
@@ -57,14 +57,6 @@ class JobsController < ApplicationController
   end
 
   private
-
-  def search_jobs
-    if params[:jobs] != 'checked'
-      JobCategory.with_joins.where('jobs.expire_at >= ?', DateTime.now)
-    else
-      JobCategory.with_joins.order('jobs.created_at ASC')
-    end
-  end
 
   def job_params
     params.require(:job).permit(:company_name, :site_url,

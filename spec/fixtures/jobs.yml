@@ -1,47 +1,43 @@
 ruby:
   user: david
   category: programming_category
-  expire_at: Mon, 12 Aug 2019
+  expire_at: <%= Time.zone.now + 1.days %>
   vacancy_completed: true
   title: "Ruby Developer"
   company_name: "37 SIgnals"
   description: "Lorem Ipsum"
   contact_message: "Lorem Ipsum"
   location: "San Francisco, CA, USA"
-  created_at: '2019-07-01 11:04:44 UTC'
 
 designer:
   user: maria
   category: design_category
-  expire_at: Mon, 07 Aug 2019
+  expire_at: <%= Time.zone.now - 8.days %>
   vacancy_completed: false
   title: "Web Designer"
   company_name: "Google"
   description: "Lorem Ipsum"
   contact_message: "Lorem Ipsum"
   location: "San Francisco, CA, USA"
-  created_at: '2019-08-07 11:04:44 UTC'
 
 programmer:
   user: lucas
   category: business_category
-  expire_at: Mon, 20 Aug 2019
+  expire_at: <%= Time.zone.now + 11.days %>
   vacancy_completed: false
   title: "Developer"
   company_name: "Microsoft"
   description: "Lorem Ipsum"
   contact_message: "Lorem Ipsum"
   location: "São Francisco, PA, BR"
-  created_at: '2019-08-08 11:04:44 UTC'
 
 front_end:
   user: julia
   category: other_it_category
-  expire_at: Mon, 01 Aug 2019
+  expire_at: <%= Time.zone.now - 2.month %>
   vacancy_completed: false
   title: "Web Designer"
   company_name: "Google"
   description: "Lorem Ipsum"
   contact_message: "Lorem Ipsum"
   location: "San Francisco, CA, USA"
-  created_at: '2019-05-01 13:08:32 UTC'
