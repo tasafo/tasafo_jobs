@@ -16,7 +16,7 @@ class Job < ActiveRecord::Base
     if old_vacancies == 'checked'
       JobCategory.with_joins.order_created
     else
-      JobCategory.with_joins.where('jobs.expire_at >= ?', DateTime.now)
+      JobCategory.with_joins.where('jobs.expire_at >= ?', Date.today)
                  .order_created
     end
   end

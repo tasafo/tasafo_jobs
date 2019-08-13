@@ -8,7 +8,7 @@ describe JobsController, type: :controller do
   fixtures :jobs
 
   let(:job) { jobs(:designer, :ruby, :programmer, :front_end) }
-  let(:date_now) { DateTime.now }
+  let(:date_now) { Date.today }
 
   context 'Return Jobs' do
     it 'created' do
