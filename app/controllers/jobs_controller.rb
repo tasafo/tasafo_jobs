@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create update edit my_jobs]
 
   def index
-    @categories = Job.new.search_jobs(params[:jobs])
+    @categories = Job.new.search_jobs(params[:old_vacancies])
   end
 
   def my_jobs

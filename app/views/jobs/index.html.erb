@@ -4,7 +4,7 @@
   </p>
 </aside>
 <%= form_tag(jobs_path, { method: :get }) do %>
-  <%= check_box_tag 'jobs', :checked, checkbox_checked(params[:jobs]) %>
+  <%= check_box_tag 'old_vacancies', :checked, checkbox_checked(params[:old_vacancies]) %>
   <span> Mostrar Vagas Antigas</span>
 <% end %>
 
@@ -18,7 +18,7 @@
 
         <ul class="jobs">
           <% category.jobs.each do |job| %>
-            <% search_jobs(job, params[:jobs]) %>
+            <% search_jobs(job, params[:old_vacancies]) %>
             <li class="job">
               <h4><%= link_to job.title, job %></h4>
 
@@ -45,10 +45,10 @@
 <script type="text/javascript">
   $(document).ready(function() {
 
-    $('#jobs').change(function(evt) {
+    $('#old_vacancies').change(function(evt) {
       evt.preventDefault();
 
-      $('#jobs').parent().submit();
+      $('#old_vacancies').parent().submit();
     });
   });
 </script>
