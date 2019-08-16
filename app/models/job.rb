@@ -12,9 +12,9 @@ class Job < ActiveRecord::Base
             format: { with: URI::DEFAULT_PARSER.make_regexp },
             allow_blank: true
 
-  def search_jobs(old_vacancies)
+  def self.search(old_vacancies)
     if old_vacancies == 'checked'
-      JobCategory.with_joins.order_created
+      JobCategory.with_joins.all.order_created
     else
       JobCategory.with_joins.where('jobs.expire_at >= ?', Date.today)
                  .order_created
