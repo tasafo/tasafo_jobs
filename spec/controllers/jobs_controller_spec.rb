@@ -16,11 +16,19 @@ describe JobsController, type: :controller do
     end
 
     it 'with date no expire' do
+      params = { old_vacancies: 'checked' }
+
+      get :index, params: params.merge(format: 'html')
+
       expect(jobs(:ruby).expire_at).to be >= Date.parse(date_now.to_s)
       expect(jobs(:programmer).expire_at).to be >= Date.parse(date_now.to_s)
     end
 
     it 'where date this expired' do
+      params = { old_vacancies: nil }
+
+      get :index, params: params.merge(format: 'html')
+
       expect(jobs(:designer).expire_at).to be < Date.parse(date_now.to_s)
       expect(jobs(:front_end).expire_at).to be < Date.parse(date_now.to_s)
     end
