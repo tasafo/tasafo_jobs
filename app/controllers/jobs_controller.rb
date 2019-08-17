@@ -7,9 +7,7 @@ class JobsController < ApplicationController
     @categories = Job.search(params[:old_vacancies])
   end
 
-  def my_jobs
-    # method empty
-  end
+  def my_jobs; end
 
   def show
     @job = Job.find(params[:id])

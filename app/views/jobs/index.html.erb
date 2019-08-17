@@ -25,7 +25,7 @@
               <p>
                 <span><%= job.company_name %></span> <%= t(:in)%> <span><%= job.location %></span> - <%= t(:posted_on) %> <span><%= job.created_at.strftime "%d/%m/%Y" %>
                 </span>
-                <%= @expired_in %> <span><%= @expired %></span>
+                <%= @expired_in %> <span><%= @expired_at %></span>
               </p>
             </li>
           <% end %>

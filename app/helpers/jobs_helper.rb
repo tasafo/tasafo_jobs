@@ -11,9 +11,9 @@ module JobsHelper
   def search_jobs(job, job_checked)
     if job_checked.nil?
       @expired_in = t('jobs.expired_in')
-      @expired = job.expire_at.strftime '%d/%m/%Y'
+      @expired_at = job.expire_at.strftime '%d/%m/%Y'
     else
-      @expired = ''
+      @expired_at = ''
     end
   end
 
