@@ -33,4 +33,5 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'simplecov', '~> 0.16'
+  gem 'rails-controller-testing'
 end

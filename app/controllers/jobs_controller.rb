@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :my_jobs]
+  before_action :authenticate_user!, only: %i[new create update edit my_jobs]
 
   def index
-    @categories = JobCategory.all
+    @categories = Job.search(params[:old_vacancies])
   end
 
-  def my_jobs
-  end
+  def my_jobs; end
 
   def show
     @job = Job.find(params[:id])
@@ -23,7 +24,7 @@ class JobsController < ApplicationController
     @job = Job::Creator.new.create(attrs)
 
     if @job.persisted?
-      redirect_to @job, notice: t("jobs.successfully_created")
+      redirect_to @job, notice: t('jobs.successfully_created')
     else
       render :new
     end
@@ -37,7 +38,7 @@ class JobsController < ApplicationController
     @job = current_user.jobs.find(params[:id])
 
     if @job.update_attributes(job_params)
-      redirect_to @job, notice: t("jobs.successfully_updated")
+      redirect_to @job, notice: t('jobs.successfully_updated')
     else
       render :new
     end
@@ -47,9 +48,9 @@ class JobsController < ApplicationController
     @job = current_user.jobs.find(params[:id])
 
     if @job.destroy
-      redirect_to root_path, notice: t("jobs.successfully_destroyed")
+      redirect_to root_path, notice: t('jobs.successfully_destroyed')
     else
-      redirect_to @job, alert: t("jobs.destroy_error")
+      redirect_to @job, alert: t('jobs.destroy_error')
     end
   end
 
@@ -58,6 +59,7 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:company_name, :site_url,
                                 :title, :description, :contact_message,
-                                :location, :category_id)
+                                :location, :category_id, :expire_at,
+                                :vacancy_completed)
   end
 end

@@ -1,6 +1,8 @@
 ruby:
   user: david
   category: programming_category
+  expire_at: <%= Time.zone.now + 1.days %>
+  vacancy_completed: true
   title: "Ruby Developer"
   company_name: "37 SIgnals"
   description: "Lorem Ipsum"
@@ -9,9 +11,33 @@ ruby:
 
 designer:
   user: maria
-  category: design_category
+  category: designer_category
+  expire_at: <%= Time.zone.now - 8.days %>
+  vacancy_completed: false
   title: "Web Designer"
   company_name: "Google"
+  description: "Lorem Ipsum"
+  contact_message: "Lorem Ipsum"
+  location: "San Francisco, CA, USA"
+
+programmer:
+  user: lucas
+  category: business_category
+  expire_at: <%= Time.zone.now + 11.days %>
+  vacancy_completed: false
+  title: "Developer"
+  company_name: "Microsoft"
+  description: "Lorem Ipsum"
+  contact_message: "Lorem Ipsum"
+  location: "São Francisco, PA, BR"
+
+front_end:
+  user: julia
+  category: other_it_category
+  expire_at: <%= Time.zone.now - 2.months %>
+  vacancy_completed: true
+  title: "Administrator"
+  company_name: "Facebook"
   description: "Lorem Ipsum"
   contact_message: "Lorem Ipsum"
   location: "San Francisco, CA, USA"
