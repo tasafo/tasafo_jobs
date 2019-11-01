@@ -7,7 +7,7 @@ gem 'rails-i18n'
 gem 'dotenv-rails'
 gem 'sass-rails'
 gem 'uglifier'
-gem 'devise'
+gem "devise", ">= 4.7.1"
 gem 'devise-i18n'
 
 gem 'jquery-rails'
