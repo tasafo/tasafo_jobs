@@ -20,4 +20,12 @@ module JobsHelper
   def checkbox_checked(checked)
     checked.nil? ? false : true
   end
+
+  def has_expire_at?(job)
+    if job.expire_at.nil?
+      'Não informado' 
+    else 
+      job.expire_at.strftime "%d/%m/%Y"
+    end
+  end
 end

@@ -32,12 +32,7 @@
     <dd><%= @job.created_at.strftime "%d/%m/%Y" %></dd>
 
     <dt><%= t(:days_to_expire) %></dt>
-      <%if @job.expire_at.nil? %>
-        Não informado
-      <% else %>
-        <dd><%= @job.expire_at.strftime "%d/%m/%Y" %>
-      <% end %>
-    </dd>
+    <dd><%= has_expire_at?(@job) %></dd>
 
     <dt><%= t(:vacancy_completed) %></dt>
       <% if @job.vacancy_completed == true %>

@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20190811034224) do
     t.text "contact_message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "days_to_expire"
     t.boolean "vacancy_completed"
     t.datetime "expire_at"
     t.index ["user_id"], name: "index_jobs_on_user_id"
