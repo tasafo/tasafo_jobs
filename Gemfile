@@ -13,7 +13,7 @@ gem 'devise-i18n'
 gem 'jquery-rails'
 gem 'jbuilder'
 
-gem 'tinymce-rails', '4.7.9'
+gem 'tinymce-rails', '5.2.2'
 gem 'tinymce-rails-langs'
 
 gem 'pg', '0.21.0'
