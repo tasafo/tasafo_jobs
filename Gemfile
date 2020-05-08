@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.6.5'
+ruby '2.6.6'
 
-gem 'rails', '5.1.7'
+gem 'rails', '~> 6.0'
 gem 'rails-i18n'
 gem 'dotenv-rails'
 gem 'sass-rails'
