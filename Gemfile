@@ -21,6 +21,8 @@ gem 'puma'
 
 gem 'sidekiq'
 
+gem 'webpacker'
+
 group :development do
   gem 'listen'
 end
