@@ -13,9 +13,9 @@ services:
 - redis-server
 cache:
   bundler: true
-bundler_args: --without production
 before_install:
 - gem install bundler -v='2.0.2'
+- bundle config set without 'production'
 before_script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
