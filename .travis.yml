@@ -1,20 +1,18 @@
-dist: bionic
-sudo: false
+os: linux
+dist: focal
 language: ruby
-rvm: 2.6.6
+rvm: 2.7.2
 env:
   global:
   - DB_USER=postgres
   - DB_PASS=
-addons:
-  postgresql: 10
 services:
 - postgresql
-- redis-server
+- redis
 cache:
   bundler: true
 before_install:
-- gem install bundler -v='2.0.2'
+- gem install bundler -v='2.1.4'
 - bundle config set without 'production'
 before_script:
 - bundle exec rails db:create
