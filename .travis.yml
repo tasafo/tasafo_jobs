@@ -29,7 +29,8 @@ after_success:
 deploy:
   provider: heroku
   app: tasafojobs
-  skip_cleanup: true
+  cleanup: true
+  strategy: api
   on:
     branch: master
   api_key:
