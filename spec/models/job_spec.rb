@@ -12,8 +12,6 @@ describe Job do
     it { should validate_presence_of(:company_name) }
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:contact_message) }
-    it { should validate_presence_of(:category) }
-    it { should validate_presence_of(:user) }
 
     it { should allow_value('').for(:site_url) }
     it { should_not allow_value('is not a url').for(:site_url) }

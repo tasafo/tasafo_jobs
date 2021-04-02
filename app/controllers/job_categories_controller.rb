@@ -1,11 +1,9 @@
 class JobCategoriesController < ApplicationController
   before_action :get_category
 
-  def jobs
-  end
+  def jobs; end
 
-  def resumes
-  end
+  def resumes; end
 
   private
 

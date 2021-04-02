@@ -30,12 +30,12 @@
 
       <div class="form-group">
         <%= f.label :name %>
-        <%= f.text_field :name, class: "form-control" %>
+        <%= f.text_field :name, class: "form-control", required: true %>
       </div>
 
       <div class="form-group">
         <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control" %>
+        <%= f.text_field :title, class: "form-control", required: true %>
       </div>
 
 
@@ -60,32 +60,32 @@
 
       <div class="form-group">
         <%= f.label :site_url %> <i><%= t("http_reminder") %></i>
-        <%= f.text_field :site_url, class: "form-control" %>
+        <%= f.url_field :site_url, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :contact_email %>
-        <%= f.text_field :contact_email, class: "form-control" %>
+        <%= f.email_field :contact_email, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :facebook_url %> <i><%= t("http_reminder") %></i>
-        <%= f.text_field :facebook_url, class: "form-control" %>
+        <%= f.url_field :facebook_url, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :twitter_url %> <i><%= t("http_reminder") %></i>
-        <%= f.text_field :twitter_url, class: "form-control" %>
+        <%= f.url_field :twitter_url, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :google_plus_url %> <i><%= t("http_reminder") %></i>
-        <%= f.text_field :google_plus_url, class: "form-control" %>
+        <%= f.url_field :google_plus_url, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :linked_in_url %> <i><%= t("http_reminder") %></i>
-        <%= f.text_field :linked_in_url, class: "form-control" %>
+        <%= f.url_field :linked_in_url, class: "form-control" %>
       </div>
 
       <div class="form-group">

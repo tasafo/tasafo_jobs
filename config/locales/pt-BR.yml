@@ -9,7 +9,6 @@
   location: "Localização"
   site: "Site"
   description: "Descrição"
-  days_to_expire: 'Vaga expira em'
   vacancy_completed: 'Vaga Preenchida?'
   confirmation: 'Sim'
   negation: 'Não'
@@ -20,6 +19,7 @@
   contact: "Contato"
   http_reminder: "(Não esqueça do https://)"
   advertize: Anuncie
+  show_old_jobs: Mostrar vagas antigas
 
   devise:
     sign_in: "Login"
@@ -69,7 +69,6 @@
     confirm_destroy: "Você tem certeza que deseja apagar esse Trampo?"
     be_the_first: "Nenhum Trampo foi encontrado... seja o primeiro a anunciar um Trampo!"
     you_have_no_jobs: "Você não anunciou nenhum Trampo ainda."
-    expired_in: 'Expira em'
     expired: ' (Vaga expirada)'
     email:
       new_job_subject: "Acabaram de anunciar um novo trampo!"
@@ -143,65 +142,13 @@
         location: Localização
         description: Descrição
         contact_message: Mensagem para Contato
-        expire_at: Dias para Expirar
+        expire_at: Expira em
         vacancy_completed: Vaga foi Preenchida?
-
-    errors:
-      models:
-        job:
-          attributes:
-            category:
-              blank: "não pode ficar em branco"
-            title:
-              blank: "não pode ficar em branco"
-            company_name:
-              blank: "não pode ficar em branco"
-            contact_message:
-              blank: "não pode ficar em branco"
-            description:
-              blank: "não pode ficar em branco"
-            site_url:
-              invalid: "deve ser um endereço válido como em https://www.seusite.com.br"
-        resume:
-          attributes:
-            description:
-              blank: "não pode ficar em branco"
-            category:
-              blank: "não pode ficar em branco"
-            title:
-              blank: "não pode ficar em branco"
-            name:
-              blank: "não pode ficar em branco"
-            site_url:
-              invalid: "deve ser um endereço válido como em https://www.seusite.com.br"
-            facebook_url:
-              invalid: "deve ser um endereço válido do Facebook"
-            twitter_url:
-              invalid: "deve ser um endereço válido do Twitter"
-            google_plus_url:
-              invalid: "deve ser um endereço válido do Google Plus"
-            linked_in_url:
-              invalid: "deve ser um endereço válido do Linked In"
-        user:
-          attributes:
-            email:
-              blank: "não pode ficar em branco"
-              taken: "já está sendo utilizado por outra pessoa"
-            password:
-              too_short: "deve conter ao menos 8 caracteres"
-            current_password:
-              blank: "não pode ficar em branco"
-              invalid: "está incorreta"
-            password_confirmation:
-              confirmation: "deve ser igual a sua nova senha"
 
   errors:
     messages:
       not_saved: "Erro ao salvar"
 
-
-#Category translation missing: pt-BR.activerecord.errors.models.job.attributes.category.blank
-#Profissional translation missing: pt-BR.activerecord.errors.models.job.attributes.title.blank
-#Nome da Empresa translation missing: pt-BR.activerecord.errors.models.job.attributes.company_name.blank
-#Mensagem para Contato translation missing: pt-BR.activerecord.errors.models.job.attributes.contact_message.blank
-#Descrição translation missing: pt-BR.activerecord.errors.models.job.attributes.description.blank
+  time:
+    formats:
+      datetime_custom: '%d/%m/%Y'

@@ -8,24 +8,7 @@ module JobsHelper
     options_for_select(options, selected: model.category_id || '')
   end
 
-  def search_jobs(job, job_checked)
-    if job_checked.nil?
-      @expired_in = t('jobs.expired_in')
-      @expired_at = job.expire_at.strftime '%d/%m/%Y'
-    else
-      @expired_at = ''
-    end
-  end
-
   def checkbox_checked(checked)
-    checked.nil? ? false : true
-  end
-
-  def has_expire_at?(job)
-    if job.expire_at.nil?
-      'Não informado' 
-    else 
-      job.expire_at.strftime "%d/%m/%Y"
-    end
+    !checked.nil?
   end
 end

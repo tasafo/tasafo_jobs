@@ -6,8 +6,6 @@ describe Resume do
   describe "Validations" do
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:category) }
-    it { should validate_presence_of(:user) }
     it { should validate_presence_of(:description) }
 
     it { should allow_value("").for(:linked_in_url) }

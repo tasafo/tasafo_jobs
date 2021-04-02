@@ -12,6 +12,7 @@ ruby:
 designer:
   user: maria
   category: designer_category
+  created_at: <%= Time.zone.now - 8.days %>
   expire_at: <%= Time.zone.now - 8.days %>
   vacancy_completed: false
   title: "Web Designer"
@@ -34,6 +35,7 @@ programmer:
 front_end:
   user: julia
   category: other_it_category
+  created_at: <%= Time.zone.now - 2.months %>
   expire_at: <%= Time.zone.now - 2.months %>
   vacancy_completed: true
   title: "Administrator"

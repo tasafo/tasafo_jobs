@@ -3,10 +3,10 @@ class UsersController < ApplicationController
 
   def update_setting
     setting = current_user.setting
-  
-    setting.update_attributes(setting_params)
 
-    redirect_to root_path, notice: I18n.t("account.edit.setting_updated")
+    setting.update(setting_params)
+
+    redirect_to root_path, notice: I18n.t('account.edit.setting_updated')
   end
 
   private

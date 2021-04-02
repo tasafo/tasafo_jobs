@@ -5,7 +5,7 @@
 </aside>
 <%= form_tag(jobs_path, { method: :get }) do %>
   <%= check_box_tag 'old_vacancies', :checked, checkbox_checked(params[:old_vacancies]) %>
-  <span> Mostrar Vagas Antigas</span>
+  <%= label_tag 'old_vacancies', t('show_old_jobs') %>
 <% end %>
 
 <div>
@@ -15,17 +15,17 @@
         <h1>
           <%= link_to category.name, job_category_jobs_path(category) %>
         </h1>
-
         <ul class="jobs">
           <% category.jobs.each do |job| %>
-            <% search_jobs(job, params[:old_vacancies]) %>
             <li class="job">
               <h4><%= link_to job.title, job %></h4>
-
               <p>
-                <span><%= job.company_name %></span> <%= t(:in)%> <span><%= job.location %></span> - <%= t(:posted_on) %> <span><%= job.created_at.strftime "%d/%m/%Y" %>
+                <span>
+                  <%= job.company_name %></span> <%= t(:in)%> <span><%= job.location %></span> - <%= t(:posted_on) %> <span><%= l(job.created_at, format: :datetime_custom) %>
                 </span>
-                <%= @expired_in %> <span><%= @expired_at %></span>
+                <% unless job.expire_at.blank? %>
+                  <%= t('activerecord.attributes.job.expire_at') %> <span><%= l(job.expire_at, format: :datetime_custom) %></span>
+                <% end %>
               </p>
             </li>
           <% end %>
