@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.6.6'
+ruby '2.7.2'
 
-gem 'rails', '~> 6.0'
+gem 'rails', '~> 6.1'
 gem 'rails-i18n'
 gem 'dotenv-rails'
 gem 'sass-rails'
@@ -11,13 +11,12 @@ gem "devise", ">= 4.7.1"
 gem 'devise-i18n'
 
 gem 'jquery-rails'
-gem 'jbuilder'
 
 gem 'tinymce-rails', '5.2.2'
 gem 'tinymce-rails-langs'
 
-gem 'pg', '0.21.0'
-gem 'puma'
+gem 'pg', '1.2.3'
+gem 'puma', '5.2.2'
 
 gem 'sidekiq'
 
@@ -29,11 +28,11 @@ end
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'rspec-rails', '3.7.2'
+  gem 'rspec-rails', '5.0.1'
 end
 
 group :test do
   gem 'shoulda-matchers'
-  gem 'simplecov', '~> 0.16'
+  gem 'simplecov', '0.21.2'
   gem 'rails-controller-testing'
 end
