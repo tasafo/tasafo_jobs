@@ -11,7 +11,7 @@ describe JobsController do
     it 'with date no expire' do
       get :index
 
-      expect(assigns(:categories).size).to eql(2)
+      expect(assigns(:categories).size).to eql(3)
     end
 
     it 'with all the old works' do

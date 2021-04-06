@@ -19,7 +19,7 @@ class Job < ActiveRecord::Base
       JobCategory.with_joins.all.order_created
     else
       JobCategory.with_joins
-                 .where('jobs.expire_at >= ? OR jobs.created_at >= ?', today, today - 7.days)
+                 .where('jobs.expire_at >= ? OR jobs.created_at >= ?', today, today - 30.days)
                  .order_created
     end
   end
