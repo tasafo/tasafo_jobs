@@ -16,7 +16,7 @@ gem 'tinymce-rails', '5.2.2'
 gem 'tinymce-rails-langs'
 
 gem 'pg', '1.2.3'
-gem 'puma', '5.2.2'
+gem 'puma', '5.3.0'
 
 gem 'sidekiq'
 
