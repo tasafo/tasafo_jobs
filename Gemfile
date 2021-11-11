@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.7.3'
+ruby RUBY_VERSION
 
 gem 'rails', '~> 6.1'
 gem 'rails-i18n'
@@ -16,7 +16,7 @@ gem 'tinymce-rails', '5.2.2'
 gem 'tinymce-rails-langs'
 
 gem 'pg', '1.2.3'
-gem 'puma', '5.4.0'
+gem 'puma', '5.5.2'
 
 gem 'sidekiq'
 
@@ -33,6 +33,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
-  gem 'simplecov', '0.21.2'
+  gem 'simplecov', '0.21.2', require: false
+  gem 'simplecov-cobertura', require: false
   gem 'rails-controller-testing'
 end
