@@ -30,8 +30,9 @@ if Rails.env.development?
     contact_message: "Please call me on +1 555 5555 555 or send me an email to david@37signals.com",
     site_url: "http://37signals.com",
     user: david,
-    category: programming_category
-    )
+    category: programming_category,
+    expire_at: Time.zone.now + 90.days
+  )
 
   Job.create!(
     title: "Lead Android Developer",
@@ -43,8 +44,9 @@ if Rails.env.development?
     contact_message: "Please call me on +1 555 5555 555 or send me an email to maria@maria.com",
     site_url: "http://google.com",
     user: maria,
-    category: programming_category
-    )
+    category: programming_category,
+    expire_at: Time.zone.now + 90.days
+  )
 
   Job.create!(
     title: "Senior System Manager",
@@ -56,8 +58,9 @@ if Rails.env.development?
     contact_message: "Please call me on +1 555 5555 555 or send me an email to maria@google.com",
     site_url: "http://google.com",
     user: maria,
-    category: system_admin_category
-    )
+    category: system_admin_category,
+    expire_at: Time.zone.now + 90.days
+  )
 
   Job.create!(
     title: "Junior Designer",
@@ -69,8 +72,9 @@ if Rails.env.development?
     contact_message: "Please call me on +1 555 5555 555 or send me an email to maria@google.com",
     site_url: "http://google.com",
     user: maria,
-    category: designer_category
-    )
+    category: designer_category,
+    expire_at: Time.zone.now + 90.days
+  )
 
   Job.create!(
     title: "Linux System Admin",
@@ -82,8 +86,9 @@ if Rails.env.development?
     contact_message: "Please call me on +5 91 8889-8888 or send me an email to john@tasafo.org",
     site_url: "http://google.com",
     user: john,
-    category: system_admin_category
-    )
+    category: system_admin_category,
+    expire_at: Time.zone.now + 90.days
+  )
 
   Job.create!(
     title: "Computer Maintanence",
@@ -95,8 +100,9 @@ if Rails.env.development?
     contact_message: "Please call me on +5 91 8889-8888 or send me an email to john@tasafo.org",
     site_url: "http://google.com",
     user: john,
-    category: other_it_category
-    )
+    category: other_it_category,
+    expire_at: Time.zone.now + 90.days
+  )
 
   Job.create!(
     title: "Internet Marketing Professional",
@@ -108,8 +114,9 @@ if Rails.env.development?
     contact_message: "Please call me on +5 91 8889-8888 or send me an email to john@tasafo.org",
     site_url: "http://google.com",
     user: john,
-    category: business_category
-    )
+    category: business_category,
+    expire_at: Time.zone.now + 90.days
+  )
 
   Job.create!(
     title: "Application Reseller",
@@ -121,8 +128,9 @@ if Rails.env.development?
     contact_message: "Please call me on +5 91 8889-8888 or send me an email to john@tasafo.org",
     site_url: "http://google.com",
     user: david,
-    category: business_category
-    )
+    category: business_category,
+    expire_at: Time.zone.now + 90.days
+  )
 
   Resume.create!(
     name: "Mark Spenser",
@@ -142,7 +150,7 @@ if Rails.env.development?
     contact_email: "mark@mail.com",
     available: true,
     listed: true
-    )
+  )
 
   Resume.create!(
     name: "Terry Shift",
@@ -162,7 +170,7 @@ if Rails.env.development?
     contact_email: "terry@mail.com",
     available: false,
     listed: false
-    )
+  )
 
   Resume.create!(
     name: "Amanda Watson",
@@ -182,5 +190,5 @@ if Rails.env.development?
     contact_email: "amanda@mail.com",
     available: true,
     listed: true
-    )
+  )
 end

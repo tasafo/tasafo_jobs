@@ -28,7 +28,7 @@ end
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'rspec-rails', '5.0.1'
+  gem 'rspec-rails', '5.0.2'
 end
 
 group :test do
