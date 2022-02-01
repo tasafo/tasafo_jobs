@@ -1,7 +1,6 @@
 [![Code Climate](https://codeclimate.com/github/tasafo/tasafo_jobs/badges/gpa.svg)](https://codeclimate.com/github/tasafo/tasafo_jobs)
 [![Test Coverage](https://codeclimate.com/github/tasafo/tasafo_jobs/badges/coverage.svg)](https://codeclimate.com/github/tasafo/tasafo_jobs/coverage)
 [![Build](https://github.com/tasafo/tasafo_jobs/actions/workflows/build.yml/badge.svg)](https://github.com/tasafo/tasafo_jobs/actions/workflows/build.yml)
-[![security](https://hakiri.io/github/tasafo/tasafo_jobs/master.svg)](https://hakiri.io/github/tasafo/tasafo_jobs/master)
 
 # Trampos
 
